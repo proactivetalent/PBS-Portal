@@ -157,6 +157,6 @@ class LoginController extends Controller
             return $response;
         }
 
-        return redirect('https://pbs-compliance-solutions-txdp.vercel.app/');
+        return redirect('https://pbs-frontend-three.vercel.app/');
     }
 }

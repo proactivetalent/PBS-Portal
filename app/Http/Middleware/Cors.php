@@ -19,6 +19,7 @@ class Cors
         $allowedOrigins = [
             'http://localhost:3000',
             'https://pbs-compliance-solutions-txdp.vercel.app',
+            'https://pbs-frontend-three.vercel.app',
             $request->getSchemeAndHttpHost()
         ];
 

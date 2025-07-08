@@ -22,8 +22,8 @@ return [
     'allowed_origins' => [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://github.com/saidlv/pbs.nyc',
         'https://pbs-compliance-solutions-txdp.vercel.app',
+        'https://pbs-frontend-three.vercel.app',
     ],
 
     'allowed_origins_patterns' => [],
