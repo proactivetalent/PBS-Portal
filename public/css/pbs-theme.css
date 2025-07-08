@@ -1,0 +1,893 @@
+/* PBS Proactive Building Solutions Portal Theme
+ * Based on brand color scheme from PBS brand guidelines
+ * Primary colors: #38403e (dark green), #dce2e1 (light gray)
+ * Secondary colors: #616c66, #a2acaa, #8e999f
+ */
+
+:root {
+    /* PBS Brand Colors */
+    --pbs-primary: #38403e;
+    --pbs-primary-light: #505955;
+    --pbs-primary-dark: #2c3430;
+    --pbs-secondary: #616c66; 
+    --pbs-light: #a2acaa;
+    --pbs-lighter: #dce2e1;
+    --pbs-accent: #8e999f;
+    
+    /* Bootstrap color overrides */
+    --primary: #38403e;
+    --secondary: #616c66;
+    --success: #5d8a5f;
+    --info: #6c8a93;
+    --warning: #b8a05c;
+    --danger: #a55c5c;
+    --light: #dce2e1;
+    --dark: #2c3430;
+}
+
+/* PBS Primary Color Classes */
+.bg-pbs-primary {
+    background-color: #38403e !important;
+}
+
+.bg-pbs-primary-light {
+    background-color: #505955 !important;
+}
+
+.bg-pbs-primary-dark {
+    background-color: #2c3430 !important;
+}
+
+.bg-pbs-secondary {
+    background-color: #616c66 !important;
+}
+
+.bg-pbs-light {
+    background-color: #a2acaa !important;
+}
+
+.bg-pbs-lighter {
+    background-color: #dce2e1 !important;
+}
+
+.bg-pbs-accent {
+    background-color: #8e999f !important;
+}
+
+/* Text Colors */
+.text-pbs-primary {
+    color: #38403e !important;
+}
+
+.text-pbs-secondary {
+    color: #616c66 !important;
+}
+
+.text-pbs-light {
+    color: #a2acaa !important;
+}
+
+.text-pbs-lighter {
+    color: #dce2e1 !important;
+}
+
+/* Button Classes */
+.btn-pbs-primary {
+    background-color: #38403e;
+    border-color: #38403e;
+    color: #ffffff;
+}
+
+.btn-pbs-primary:hover {
+    background-color: #2c3430;
+    border-color: #252a27;
+    color: #ffffff;
+}
+
+.btn-pbs-primary:focus,
+.btn-pbs-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(56, 64, 62, 0.5);
+}
+
+.btn-pbs-primary:not(:disabled):not(.disabled):active {
+    background-color: #252a27;
+    border-color: #1f221f;
+}
+
+.btn-outline-pbs-primary {
+    color: #38403e;
+    border-color: #38403e;
+}
+
+.btn-outline-pbs-primary:hover {
+    background-color: #38403e;
+    border-color: #38403e;
+    color: #ffffff;
+}
+
+/* Card Classes */
+.card-pbs-primary {
+    border-color: #38403e;
+}
+
+.card-pbs-primary .card-header {
+    background-color: #38403e;
+    border-color: #38403e;
+    color: #ffffff;
+}
+
+.card-outline-pbs-primary {
+    border-color: #38403e;
+}
+
+/* AdminLTE Theme Overrides */
+
+/* Navbar customization */
+.navbar-pbs-primary {
+    background-color: #38403e !important;
+    border-color: #2c3430 !important;
+}
+
+.navbar-pbs-primary .navbar-nav .nav-link {
+    color: #dce2e1 !important;
+}
+
+.navbar-pbs-primary .navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+}
+
+.navbar-pbs-primary .navbar-brand {
+    color: #dce2e1 !important;
+}
+
+.navbar-pbs-primary .navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+/* Sidebar customization */
+.sidebar-dark-primary {
+    background-color: #38403e !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+    color: #dce2e1 !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+    background-color: #505955 !important;
+    color: #ffffff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #616c66 !important;
+    color: #ffffff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item.menu-is-opening > .nav-link,
+.sidebar-dark-primary .nav-sidebar > .nav-item.menu-open > .nav-link {
+    background-color: #505955 !important;
+    color: #ffffff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar .nav-treeview > .nav-item > .nav-link {
+    color: #a2acaa !important;
+}
+
+.sidebar-dark-primary .nav-sidebar .nav-treeview > .nav-item > .nav-link:hover {
+    background-color: #505955 !important;
+    color: #ffffff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar .nav-treeview > .nav-item > .nav-link.active {
+    background-color: #616c66 !important;
+    color: #ffffff !important;
+}
+
+/* Brand logo area */
+.sidebar-dark-primary .brand-link {
+    background-color: #2c3430 !important;
+    color: #dce2e1 !important;
+    border-bottom: 1px solid #505955 !important;
+}
+
+.sidebar-dark-primary .brand-link:hover {
+    color: #ffffff !important;
+}
+
+/* Main content wrapper */
+.content-wrapper {
+    background-color: #f8f9fa !important;
+}
+
+/* Footer customization */
+.main-footer {
+    background-color: #38403e !important;
+    color: #dce2e1 !important;
+    border-top: 1px solid #505955 !important;
+}
+
+.main-footer a {
+    color: #a2acaa !important;
+}
+
+.main-footer a:hover {
+    color: #ffffff !important;
+}
+
+/* Form controls */
+.form-control:focus {
+    border-color: #38403e !important;
+    box-shadow: 0 0 0 0.2rem rgba(56, 64, 62, 0.25) !important;
+}
+
+/* Tables */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(220, 226, 225, 0.05) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(220, 226, 225, 0.075) !important;
+}
+
+/* Pagination */
+.page-item.active .page-link {
+    background-color: #38403e !important;
+    border-color: #38403e !important;
+}
+
+.page-link {
+    color: #38403e !important;
+}
+
+.page-link:hover {
+    color: #2c3430 !important;
+    background-color: #dce2e1 !important;
+    border-color: #a2acaa !important;
+}
+
+/* Alerts */
+.alert-primary {
+    background-color: rgba(56, 64, 62, 0.1) !important;
+    border-color: rgba(56, 64, 62, 0.2) !important;
+    color: #2c3430 !important;
+}
+
+/* Badges */
+.badge-primary {
+    background-color: #38403e !important;
+}
+
+.badge-secondary {
+    background-color: #616c66 !important;
+}
+
+/* Progress bars */
+.progress-bar {
+    background-color: #38403e !important;
+}
+
+/* Dropdown menus */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(56, 64, 62, 0.1) !important;
+    color: #2c3430 !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+/* Card hover effects */
+.card:hover {
+    box-shadow: 0 4px 8px rgba(56, 64, 62, 0.12) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+/* Modern Animations and Enhanced Visual Effects */
+
+/* Smooth transitions for all interactive elements */
+.btn, .card, .nav-link, .page-link, .form-control, .dropdown-item {
+    transition: all 0.3s ease !important;
+}
+
+/* Pulse animation for active elements */
+@keyframes pbs-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(56, 64, 62, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(56, 64, 62, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(56, 64, 62, 0); }
+}
+
+/* Fade in animation for content */
+@keyframes pbs-fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in animation for sidebar items */
+@keyframes pbs-slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply animations to main content areas */
+.content-wrapper {
+    animation: pbs-fadeIn 0.5s ease-out;
+}
+
+.sidebar .nav-item {
+    animation: pbs-slideIn 0.3s ease-out;
+}
+
+.sidebar .nav-item:nth-child(2) { animation-delay: 0.1s; }
+.sidebar .nav-item:nth-child(3) { animation-delay: 0.2s; }
+.sidebar .nav-item:nth-child(4) { animation-delay: 0.3s; }
+.sidebar .nav-item:nth-child(5) { animation-delay: 0.4s; }
+
+/* Enhanced hover effects */
+.card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(56, 64, 62, 0.15) !important;
+}
+
+.btn:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(56, 64, 62, 0.3) !important;
+}
+
+/* Loading spinner with PBS colors */
+.pbs-spinner {
+    border: 4px solid #dce2e1;
+    border-top: 4px solid #38403e;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced focus states for better accessibility */
+.form-control:focus,
+.btn:focus,
+.nav-link:focus {
+    outline: 2px solid #38403e !important;
+    outline-offset: 2px !important;
+}
+
+/* Gradient overlays for premium feel */
+.pbs-gradient-overlay {
+    position: relative;
+}
+
+.pbs-gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(56, 64, 62, 0.1) 0%, rgba(162, 172, 170, 0.1) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Success/Error message animations */
+.alert {
+    animation: pbs-fadeIn 0.5s ease-out;
+}
+
+.alert.alert-success {
+    border-left: 4px solid #5d8a5f !important;
+}
+
+.alert.alert-danger {
+    border-left: 4px solid #a55c5c !important;
+}
+
+.alert.alert-warning {
+    border-left: 4px solid #b8a05c !important;
+}
+
+.alert.alert-info {
+    border-left: 4px solid #6c8a93 !important;
+}
+
+/* Modern table enhancements */
+.table {
+    border-collapse: separate !important;
+    border-spacing: 0 8px !important;
+}
+
+.table tbody tr {
+    background: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(56, 64, 62, 0.05) !important;
+    border-radius: 6px !important;
+}
+
+.table tbody tr:hover {
+    box-shadow: 0 4px 12px rgba(56, 64, 62, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+.table tbody td:first-child {
+    border-radius: 6px 0 0 6px !important;
+}
+
+.table tbody td:last-child {
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* Modern form styling */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem !important;
+}
+
+.form-control {
+    border: 2px solid #dce2e1 !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+    border-color: #38403e !important;
+    box-shadow: 0 0 0 3px rgba(56, 64, 62, 0.1) !important;
+}
+
+/* Modern buttons */
+.btn {
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+}
+
+.btn-pbs-primary {
+    background: linear-gradient(135deg, #38403e 0%, #505955 100%) !important;
+    color: #ffffff !important;
+}
+
+.btn-pbs-primary:hover {
+    background: linear-gradient(135deg, #505955 0%, #38403e 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Modern cards */
+.card {
+    border: 1px solid rgba(56, 64, 62, 0.1) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #38403e 0%, #505955 100%) !important;
+    color: #ffffff !important;
+    border-bottom: none !important;
+    padding: 20px !important;
+    font-weight: 600 !important;
+}
+
+.card-body {
+    padding: 24px !important;
+}
+
+/* Modern badges */
+.badge {
+    border-radius: 20px !important;
+    padding: 6px 12px !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Modern navigation */
+.nav-pills .nav-link {
+    border-radius: 25px !important;
+    padding: 10px 20px !important;
+    font-weight: 500 !important;
+    margin: 0 5px !important;
+}
+
+.nav-pills .nav-link.active {
+    background: linear-gradient(135deg, #38403e 0%, #505955 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(56, 64, 62, 0.3) !important;
+}
+
+/* Print optimizations */
+@media print {
+    .pbs-gradient-bg,
+    .pbs-light-gradient-bg,
+    .btn-pbs-primary,
+    .card-header {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+    }
+    
+    .card {
+        border: 1px solid #000000 !important;
+        box-shadow: none !important;
+    }
+    
+    /* Disable animations for print */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ADMINLTE SPECIFIC OVERRIDES */
+
+/* Override AdminLTE default blue colors */
+.btn-default {
+    background-color: #f8f9fa !important;
+    border-color: #a2acaa !important;
+    color: #2c3430 !important;
+}
+
+.btn-default:hover {
+    background-color: #e9ecef !important;
+    border-color: #616c66 !important;
+    color: #2c3430 !important;
+}
+
+/* AdminLTE info boxes */
+.info-box {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+    border: 1px solid #dce2e1 !important;
+}
+
+.info-box-icon {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+/* AdminLTE small boxes */
+.small-box {
+    color: #ffffff !important;
+}
+
+.small-box .icon {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.small-box:hover {
+    transform: scale(1.02) !important;
+    transition: transform 0.2s ease !important;
+}
+
+/* AdminLTE cards */
+.card {
+    border: 1px solid #dce2e1 !important;
+    background-color: #ffffff !important;
+}
+
+.card-header {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #505955 !important;
+}
+
+.card-body {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+}
+
+.card-footer {
+    background-color: #f8f9fa !important;
+    border-top: 1px solid #dce2e1 !important;
+    color: #616c66 !important;
+}
+
+/* AdminLTE box widgets */
+.box {
+    background-color: #ffffff !important;
+    border: 1px solid #dce2e1 !important;
+    color: #2c3430 !important;
+}
+
+.box-header {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+.box-body {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+}
+
+/* Loading overlays */
+.overlay {
+    background-color: rgba(56, 64, 62, 0.7) !important;
+}
+
+.overlay .fa-spin {
+    color: #ffffff !important;
+}
+
+/* Progress bars */
+.progress-bar {
+    background-color: #38403e !important;
+}
+
+.progress {
+    background-color: #dce2e1 !important;
+}
+
+/* Alerts */
+.alert {
+    border: 1px solid transparent !important;
+    border-radius: 0.375rem !important;
+}
+
+.alert-success {
+    background-color: rgba(93, 138, 95, 0.1) !important;
+    border-color: rgba(93, 138, 95, 0.2) !important;
+    color: #3d5a3f !important;
+}
+
+.alert-info {
+    background-color: rgba(108, 138, 147, 0.1) !important;
+    border-color: rgba(108, 138, 147, 0.2) !important;
+    color: #4a6066 !important;
+}
+
+.alert-warning {
+    background-color: rgba(184, 160, 92, 0.1) !important;
+    border-color: rgba(184, 160, 92, 0.2) !important;
+    color: #76663c !important;
+}
+
+.alert-danger {
+    background-color: rgba(165, 92, 92, 0.1) !important;
+    border-color: rgba(165, 92, 92, 0.2) !important;
+    color: #6b3c3c !important;
+}
+
+/* Modals */
+.modal-content {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+}
+
+.modal-header {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #505955 !important;
+}
+
+.modal-footer {
+    background-color: #f8f9fa !important;
+    border-top: 1px solid #dce2e1 !important;
+}
+
+/* Tooltips */
+.tooltip-inner {
+    background-color: #2c3430 !important;
+    color: #ffffff !important;
+}
+
+.tooltip.bs-tooltip-top .arrow::before {
+    border-top-color: #2c3430 !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: #2c3430 !important;
+}
+
+.tooltip.bs-tooltip-left .arrow::before {
+    border-left-color: #2c3430 !important;
+}
+
+.tooltip.bs-tooltip-right .arrow::before {
+    border-right-color: #2c3430 !important;
+}
+
+/* Popovers */
+.popover {
+    background-color: #ffffff !important;
+    border: 1px solid #a2acaa !important;
+    color: #2c3430 !important;
+}
+
+.popover-header {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #505955 !important;
+}
+
+.popover-body {
+    color: #2c3430 !important;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #a2acaa !important;
+    color: #2c3430 !important;
+}
+
+.dropdown-item {
+    color: #2c3430 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: rgba(56, 64, 62, 0.1) !important;
+    color: #2c3430 !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+/* List groups */
+.list-group-item {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+    border: 1px solid #dce2e1 !important;
+}
+
+.list-group-item:hover {
+    background-color: rgba(220, 226, 225, 0.1) !important;
+}
+
+.list-group-item.active {
+    background-color: #38403e !important;
+    border-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dce2e1 !important;
+}
+
+.breadcrumb-item {
+    color: #616c66 !important;
+}
+
+.breadcrumb-item.active {
+    color: #2c3430 !important;
+}
+
+.breadcrumb-item a {
+    color: #38403e !important;
+}
+
+.breadcrumb-item a:hover {
+    color: #2c3430 !important;
+}
+
+/* Pagination */
+.page-link {
+    color: #38403e !important;
+    background-color: #ffffff !important;
+    border: 1px solid #dce2e1 !important;
+}
+
+.page-link:hover {
+    color: #2c3430 !important;
+    background-color: #f8f9fa !important;
+    border-color: #a2acaa !important;
+}
+
+.page-item.active .page-link {
+    background-color: #38403e !important;
+    border-color: #38403e !important;
+    color: #ffffff !important;
+}
+
+.page-item.disabled .page-link {
+    color: #a2acaa !important;
+    background-color: #ffffff !important;
+    border-color: #dce2e1 !important;
+}
+
+/* Text and link colors throughout */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3430 !important;
+}
+
+.text-muted {
+    color: #616c66 !important;
+}
+
+.text-secondary {
+    color: #616c66 !important;
+}
+
+/* Ensure proper contrast in all contexts */
+.bg-white {
+    background-color: #ffffff !important;
+    color: #2c3430 !important;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+    color: #2c3430 !important;
+}
+
+.bg-dark {
+    background-color: #2c3430 !important;
+    color: #ffffff !important;
+}
+
+/* Icons should inherit color from parent or use PBS primary */
+.fa, .fas, .far, .fab, .fal, .fad {
+    color: inherit !important;
+}
+
+/* Specifically override any blue icons */
+.text-primary .fa,
+.text-primary .fas,
+.text-info .fa,
+.text-info .fas,
+.btn-primary .fa,
+.btn-primary .fas,
+.btn-info .fa,
+.btn-info .fas {
+    color: #ffffff !important;
+}
+
+/* Table action buttons */
+.table .btn {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+}
+
+/* Ensure form labels are visible */
+label {
+    color: #2c3430 !important;
+    font-weight: 500 !important;
+}
+
+/* Input groups */
+.input-group-text {
+    background-color: #f8f9fa !important;
+    border: 1px solid #a2acaa !important;
+    color: #2c3430 !important;
+}
+
+.input-group-text:focus {
+    border-color: #38403e !important;
+}
+
+/* Additional sidebar fixes for PBS theme */
+.main-sidebar {
+    box-shadow: 0 2px 4px rgba(56, 64, 62, 0.1) !important;
+}
+
+.sidebar-dark-primary {
+    background-color: #38403e !important;
+}
+
+/* DataTables pagination PBS theme integration */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: 1px solid #a2acaa !important;
+    color: #38403e !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border-color: #38403e !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #38403e !important;
+    border-color: #38403e !important;
+    color: white !important;
+}
