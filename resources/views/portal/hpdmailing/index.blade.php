@@ -18,7 +18,7 @@
 			<h1>HPD Mailings</h1>
 		</div>
 		<div class="col-md-2 text-right">
-			<a href="{{route('hpdmailing.create')}}" class="btn btn-lg btn-block btn-secondary">Create New Mailing</a>
+			<a href="{{route('hpdmailing.create')}}" class="btn btn-lg btn-block" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">Create New Mailing</a>
 		</div>
 	</div>
 

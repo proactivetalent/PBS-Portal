@@ -162,7 +162,7 @@
 <htmlpageheader name="page-header" id="header">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-            <td style="background: url({{asset("images/logos/black.jpg")}}) no-repeat center center; background-size: cover;">
+            <td style="background: #38403e url({{asset("pics/LOGO.png")}}) no-repeat center center; background-size: contain;">
                 <div style="height: 200px!important;">
                     <span style="color: transparent">
                                                        <br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>
@@ -272,7 +272,7 @@
     <!-- Intro -->
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr style="border-color: transparent!important; ">
-            <td style="background: url({{asset("images/logos/blackfooter.jpg")}}) no-repeat center center; background-size: cover; border-radius: 0px 0px 25px 25px;"
+            <td style="background: #38403e url({{asset("pics/LOGO.png")}}) no-repeat center center; background-size: contain; border-radius: 0px 0px 25px 25px;"
                 class="p30-15 bbrr">
                 <table style="color: lightgrey; padding: 15px 0px;" width="100%" border="0"
                        cellspacing="0" cellpadding="0">

@@ -181,7 +181,7 @@
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr style="height: 150px; border-radius: 26px 26px 0px 0px">
                                             <td style="
-                                                    background: url({{asset("images/logos/black.jpg")}}) no-repeat center center; background-size: cover; border-radius: 25px 25px 0px 0px;">
+                                                    background: #38403e url({{asset("pics/LOGO.png")}}) no-repeat center center; background-size: contain; border-radius: 25px 25px 0px 0px;">
                                             </td>
                                         </tr>
 
@@ -194,7 +194,7 @@
 
                         <!-- Footer -->
                             <tr style="border-color: transparent!important; ">
-                                <td style="background: url({{asset("images/logos/blackfooter.jpg")}}) no-repeat center center; background-size: cover; border-radius: 0px 0px 25px 25px;"
+                                <td style="background: #38403e url({{asset("pics/LOGO.png")}}) no-repeat center center; background-size: contain; border-radius: 0px 0px 25px 25px;"
                                     class="p30-15 bbrr">
                                     <table style="color: lightgrey; padding: 15px 0px;" width="100%" border="0"
                                            cellspacing="0" cellpadding="0">

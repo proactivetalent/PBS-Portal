@@ -124,7 +124,7 @@
                                                         <tr>
                                                             <td class="h1 pb25"
                                                                 style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:20px; line-height:23px; text-align:center; padding-bottom:25px; background-color: rgba(171,177,175,0.36); padding: 30px 30px; border-radius:26px 26px 0px 0px;">
-                                                                <img src="{{asset("images/logos/logo@2x.png")}}"
+                                                                <img src="{{asset("pics/LOGO.png")}}"
                                                                      height="50%" border="0" alt=""/><br/><br/>
                                                                 NEW ALERT(s) ISSUED at <br/>
                                                                 <br/>

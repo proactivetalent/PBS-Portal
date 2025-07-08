@@ -6,7 +6,7 @@
 @section('plugins.Datatables', true)
 
 @section('content_header')
-    <h1 class="m-0 text-dark"><i class="fas fa-fw fa-mail-bulk"></i> Dashboard</h1>
+    <h1 class="m-0 text-dark"><i class="fas fa-fw fa-users"></i> Clients</h1>
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                Login As Clint
+                                Login As Client
                             </span>
 
                         </div>
@@ -27,7 +27,7 @@
 
 
                         <div class="table-responsive users-table">
-                            <table id="example" class="table table-striped table-sm data-table">
+                            <table id="example" class="table table-striped table-sm data-table" style="width:100%">
                                 {{--                                <caption id="user_count">--}}
                                 {{--                                    {!! trans_choice('laravelusers::laravelusers.users-table.caption', 1, ['userscount' => $users->count()]) !!}--}}
                                 {{--                                </caption>--}}
@@ -54,28 +54,30 @@
                                             <td class="hidden-sm hidden-xs">
                                                 @foreach ($user->roles as $user_role)
                                                     @if ($user_role->name == 'User')
-                                                        @php $badgeClass = 'primary' @endphp
+                                                        <span class="badge" style="background-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">{{ $user_role->name }}</span>
                                                     @elseif ($user_role->name == 'Admin')
-                                                        @php $badgeClass = 'warning' @endphp
+                                                        <span class="badge" style="background-color: #37403D !important; color: #DCE2E2 !important; font-weight: 500 !important;">{{ $user_role->name }}</span>
                                                     @elseif ($user_role->name == 'Unverified')
-                                                        @php $badgeClass = 'danger' @endphp
+                                                        <span class="badge bg-danger">{{ $user_role->name }}</span>
                                                     @else
-                                                        @php $badgeClass = 'dark' @endphp
+                                                        <span class="badge bg-dark">{{ $user_role->name }}</span>
                                                     @endif
-                                                    <span class="badge badge-{{$badgeClass}}">{{ $user_role->name }}</span>
                                                 @endforeach
                                             </td>
                                             <td class="hidden-sm hidden-xs hidden-md">
                                                 <b>  {{Str::upper(isset($user->subscription()->stripe_status)?$user->subscription()->stripe_status:'Undefined')}} </b>
                                             </td>
                                             <td class="hidden-sm hidden-xs hidden-md">
-                                                @if($user->photo) <img width="40px" src="{{asset($user->photo)}}">
-                                                @else <img width="40px" src="{{asset('images/blank.svg')}}"> @endif
+                                                @if($user->photo)
+                                                    <img width="40px" src="{{asset($user->photo)}}" alt="{{$user->name}}" class="img-thumbnail" onerror="this.src='{{asset('images/blank.svg')}}';">
+                                                @else
+                                                    <img width="40px" src="{{asset('images/blank.svg')}}" alt="No Image" class="img-thumbnail">
+                                                @endif
                                             </td>
                                             <td>
-                                                <a class="btn btn-sm btn-success btn-block"
+                                                <a class="btn btn-sm btn-block"
                                                    href="{{ URL::to('users/' . $user->id) }}" data-toggle="tooltip"
-                                                   title="Show User">
+                                                   title="Show User" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">
                                                     <i class="fas fa-user-check"></i> Show User
                                                 </a>
                                             </td>

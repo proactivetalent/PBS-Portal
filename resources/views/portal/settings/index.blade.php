@@ -22,7 +22,7 @@
                     <div class="card-header">
                         <div class="card-title"><h3>All Settings</h3></div>
                         <div class="card-tools">   @if(Auth::user()->hasRole('developer'))
-                                <a href="{{route('settings.create')}}" class="btn btn-lg btn-block btn-secondary">Create New Setting</a>
+                                <a href="{{route('settings.create')}}" class="btn btn-lg btn-block" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">Create New Setting</a>
                             @endif</div>
                     </div>
                     <!-- /.card-header -->
@@ -56,9 +56,9 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <div class="row">
-                                                    <a href="{{route('settings.show',$setting->id)}}" class="btn btn-secondary mx-1">View</a>
-                                                    <a href="{{route('settings.edit',$setting->id)}}" class="btn btn-warning mx-1">Edit</a>
+                                                <div class="d-flex flex-column">
+                                                    <a href="{{route('settings.show',$setting->id)}}" class="btn mx-1 mb-1" style="background-color: #37403D !important; border-color: #37403D !important; color: #DCE2E2 !important; font-weight: 500 !important;">View</a>
+                                                    <a href="{{route('settings.edit',$setting->id)}}" class="btn mx-1 mb-1" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">Edit</a>
                                                     @if(Auth::user()->hasRole('developer'))
                                                         {!! Form::open(['route' => ['settings.destroy', $setting->id], 'method' => 'DELETE','class'=>'mx-1']) !!}
                                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}

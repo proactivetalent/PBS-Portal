@@ -65,10 +65,10 @@ return [
     |
     */
 
-    'logo' => '<img src="/images/logo.png" />',
-    'logo_img' => 'images/logo.png',
+    'logo' => '<img src="/pics/LOGO.png" />',
+    'logo_img' => 'pics/LOGO.png',
     'logo_img_class' => 'brand-image-xl',
-    'logo_img_xl' => 'images/logo@2x.png',
+    'logo_img_xl' => 'pics/LOGO.png',
     'logo_img_xl_class' => 'brand-image-xl',
     'logo_img_alt' => 'PBS.nyc',
 
@@ -86,9 +86,9 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'images/logo.png',
+            'path' => 'pics/LOGO.png',
             'alt' => 'PBS.NYC',
             'class' => '',
             'width' => 50,
@@ -111,7 +111,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'images/logo@2x.png',
+            'path' => 'pics/LOGO.png',
             'alt' => 'PBS.NYC Preloader',
             'effect' => 'animation__shake',
             'width' => 60,
