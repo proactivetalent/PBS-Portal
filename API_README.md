@@ -17,6 +17,10 @@ Tracking of Form Submissions,
 Tracking of Resources Downloads
 Google Analytics
 
+pbsnyc
+pbsuser
+pbssecret123
+
 # PBS NYC API Documentation
 
 ## Authentication

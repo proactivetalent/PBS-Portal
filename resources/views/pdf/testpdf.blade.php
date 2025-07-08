@@ -233,7 +233,7 @@
                         </div>
                     </td>
                     <td class="col3" style="text-align: right; vertical-align: middle;">
-                        <img alt="PBS NYC" src="https://pbs.nyc/pics/LOGO.png" style="height: 70px;">
+                        <img alt="Test Team" src="https://pbs.nyc/pics/LOGO.png" style="height: 70px;">
                     </td>
                 </tr>
             </table>
