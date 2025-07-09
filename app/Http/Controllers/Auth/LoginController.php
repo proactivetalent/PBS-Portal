@@ -157,6 +157,6 @@ class LoginController extends Controller
             return $response;
         }
 
-        return redirect('https://pbs-frontend-three.vercel.app/');
+        return redirect('http://localhost:8000/portal/login');
     }
 }

@@ -27,8 +27,22 @@ class Helper
     public static function getMailChimpInstance()
     {
         $mailchimp = new ApiClient();
-        $mailchimp->setConfig(['apiKey' => config('newsletter.apiKey'),
-            'server' => 'us3']);
+        
+        // Configure the client with proper settings
+        $config = [
+            'apiKey' => config('newsletter.apiKey'),
+            'server' => 'us3'
+        ];
+        
+        // Add SSL verification settings for development vs production
+        if (!app()->environment('production')) {
+            // For local development, disable SSL verification to avoid certificate issues
+            $config['guzzleOptions'] = [
+                'verify' => false
+            ];
+        }
+        
+        $mailchimp->setConfig($config);
         return $mailchimp;
     }
 
