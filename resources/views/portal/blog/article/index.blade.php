@@ -61,7 +61,7 @@
                                 <a href="{{route('article.show',$article->id)}}" class="btn mx-1 mb-1" style="background-color: #37403D !important; border-color: #37403D !important; color: #DCE2E2 !important; font-weight: 500 !important;">View</a>
                                 <a href="{{route('article.edit',$article->id)}}" class="btn mx-1 mb-1" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">Edit</a>
                                 {!! Form::open(['route' => ['article.destroy', $article->id], 'method' => 'DELETE','class'=>'mx-1']) !!}
-                                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btn-danger mx-1 mb-1', 'style' => 'font-weight: 500 !important; width: 100%;']) !!}
                                 {!! Form::close() !!}
                             </div>
                     </tr>

@@ -275,7 +275,8 @@
                             timer: 1000
                         });
                         table1.ajax.reload();
-                        // window.location.href="http://localhost:8000";
+                        // Use relative URL for redirection
+                        // window.location.href="/";
                     } else if (data === 'Email already in use.') {
                         Swal.fire({
                             icon: 'error',
