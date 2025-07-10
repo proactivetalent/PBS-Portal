@@ -30,172 +30,76 @@
         .main-sidebar .brand-link:hover,.main-sidebar .brand-link:focus,.main-sidebar .brand-link:active{background:#38403e!important;box-shadow:none!important;outline:none!important;}
         .main-sidebar .brand-link *:hover,.main-sidebar .brand-link *:focus{background:none!important;box-shadow:none!important;outline:none!important;}
         .main-sidebar .brand-link .brand-text{display:none!important;}
-        
-        /* --- Fixed Sidebar Scrollbar --- */
-        .main-sidebar {
-            height: 100vh !important;
-            overflow-y: scroll !important;
-            overflow-x: hidden !important;
-            position: fixed !important;
-            width: 250px !important;
-        }
-        
-        .main-sidebar .sidebar {
-            height: auto !important;
-            overflow: visible !important;
-            padding-bottom: 20px !important;
-            min-height: 150vh !important;
-        }
-        
-        /* Force proper scrollbar behavior */
-        .main-sidebar .nav-sidebar {
-            overflow: visible !important;
-            height: auto !important;
-            min-height: 150vh !important;
-            padding-bottom: 100px !important;
-        }
-        
-        /* Custom scrollbar styling - applied to main sidebar */
-        .main-sidebar::-webkit-scrollbar {
-            width: 8px !important;
-        }
-        
-        .main-sidebar::-webkit-scrollbar-track {
-            background: transparent !important;
-        }
-        
-        .main-sidebar::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5) !important;
-            border-radius: 4px !important;
-        }
-        
-        .main-sidebar::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(255, 255, 255, 0.7) !important;
-        }
-        
-        /* Firefox scrollbar */
-        .main-sidebar {
-            scrollbar-width: thin !important;
-            scrollbar-color: rgba(255, 255, 255, 0.5) transparent !important;
-        }
-        
-        /* Ensure menu items don't cause horizontal overflow */
-        .main-sidebar .nav-item {
-            width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        
-        .main-sidebar .nav-link {
-            white-space: nowrap !important;
-            overflow: hidden !important;
-            text-overflow: ellipsis !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-        }
-        
-        /* Mobile sidebar overlay and behavior */
-        #sidebar-overlay {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100vw !important;
-            height: 100vh !important;
-            background: rgba(0, 0, 0, 0.7) !important;
-            z-index: 1039 !important;
-            display: block !important;
-            backdrop-filter: blur(3px) !important;
-            -webkit-backdrop-filter: blur(3px) !important;
-        }
-        
-        /* Mobile sidebar styles */
-        @media (max-width: 768px) {
-            body.sidebar-open {
-                overflow: hidden !important;
-                position: fixed !important;
-                width: 100% !important;
-                height: 100% !important;
-            }
-            
-            body.sidebar-open .main-sidebar {
-                width: 100vw !important;
-                left: 0 !important;
-                z-index: 1040 !important;
-                transform: translateX(0) !important;
-                background-color: #38403e !important;
-                overflow-y: auto !important;
-            }
-            
-            body:not(.sidebar-open) .main-sidebar {
-                transform: translateX(-100%) !important;
-                left: 0 !important;
-            }
-            
+        /* --- Fixed Sidebar Scrollbar for Desktop Only (outermost scrollable) --- */
+        @media (min-width: 769px) {
             .main-sidebar {
-                transition: transform 0.3s ease-in-out !important;
-                width: 100vw !important;
-                background-color: #38403e !important;
+                height: 100vh !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                position: fixed !important;
+                width: 250px !important;
+                top: 0 !important;
+                left: 0 !important;
+                /* Custom scrollbar styling */
+                scrollbar-width: thin !important; /* Firefox */
+                scrollbar-color: rgba(255,255,255,0.5) transparent !important; /* Firefox */
+                transition: width 0.2s;
+                z-index: 1030;
             }
-            
-            /* Ensure sidebar content is visible and scrollable on mobile */
-            .main-sidebar .sidebar {
-                background-color: #38403e !important;
-                padding: 10px 0 !important;
-                height: auto !important;
-                min-height: 100vh !important;
+            body.sidebar-collapse .main-sidebar {
+                width: 80px !important;
+                min-width: 80px !important;
+                max-width: 80px !important;
+                height: 100vh !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                position: fixed !important;
+                left: 0 !important;
+                top: 0 !important;
+                z-index: 1030;
             }
-            
+            .main-sidebar .sidebar,
             .main-sidebar .nav-sidebar {
-                background-color: transparent !important;
-                padding: 0 !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+                padding-bottom: 0 !important;
             }
-            
-            .main-sidebar .nav-item {
+            .main-sidebar::-webkit-scrollbar {
+                width: 8px !important;
+            }
+            .main-sidebar::-webkit-scrollbar-track {
+                background: transparent !important;
+            }
+            .main-sidebar::-webkit-scrollbar-thumb {
+                background-color: rgba(255,255,255,0.5) !important;
+                border-radius: 4px !important;
+            }
+            .main-sidebar::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(255,255,255,0.7) !important;
+            }
+            /* Prevent horizontal overflow */
+            .main-sidebar .nav-item,
+            .main-sidebar .nav-link {
                 width: 100% !important;
-                margin: 0 !important;
-            }
-            
-            .main-sidebar .nav-item .nav-link {
-                color: #c2c7d0 !important;
-                background-color: transparent !important;
-                border-radius: 0 !important;
-                margin: 0 !important;
-                padding: 15px 25px !important;
-                display: flex !important;
-                align-items: center !important;
+                box-sizing: border-box !important;
                 white-space: nowrap !important;
-                text-decoration: none !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
             }
-            
-            .main-sidebar .nav-item .nav-link:hover,
-            .main-sidebar .nav-item .nav-link.active {
-                background-color: rgba(255, 255, 255, 0.1) !important;
-                color: #ffffff !important;
-            }
-            
-            .main-sidebar .nav-item .nav-link i,
-            .main-sidebar .nav-item .nav-link .nav-icon {
-                margin-right: 15px !important;
-                width: 20px !important;
-                text-align: center !important;
-                font-size: 16px !important;
-            }
-            
-            .main-sidebar .nav-item .nav-link p {
-                margin: 0 !important;
-                font-size: 15px !important;
-                font-weight: 400 !important;
-            }
-            
-            /* Footer text alignment for mobile */
+        }
+        /* Footer left-align on mobile and force all text left */
+        @media (max-width: 768px) {
             .main-footer {
                 text-align: left !important;
-                padding-left: 15px !important;
-                padding-right: 15px !important;
+                padding-left: 16px !important;
+                padding-right: 16px !important;
             }
-            
             .main-footer * {
                 text-align: left !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                justify-content: flex-start !important;
             }
         }
     </style>
@@ -224,107 +128,67 @@
                     e.stopPropagation();
                     
                     if (isMobile) {
-                        // Mobile view: toggle sidebar with overlay and scroll lock
+                        // Mobile view: toggle sidebar with overlay
                         body.classList.toggle('sidebar-open');
-                        setTimeout(handleMobileSidebar, 10);
+                        if (body.classList.contains('sidebar-open')) {
+                            sidebar.style.width = '280px'; // Set explicit width
+                            sidebar.style.left = '0';
+                            sidebar.style.backgroundColor = '#38403e'; // Match desktop background
+                            
+                            // Also set the brand link bg color
+                            const brandLink = sidebar.querySelector('.brand-link');
+                            if (brandLink) {
+                                brandLink.style.backgroundColor = '#38403e';
+                            }
+                            
+                            fixSidebarMenuItems(); // Fix menu items when opening
+                            addSidebarOverlay();
                     } else {
-                        // Desktop view: toggle sidebar collapsed
-                        body.classList.toggle('sidebar-mini');
+                        sidebar.style.left = '-280px';
+                        removeSidebarOverlay();
+                        }
+                    } else {
+                        // Desktop view: toggle collapse
                         body.classList.toggle('sidebar-collapse');
                     }
                 });
                 
-                // Initialize mobile behavior if needed
+                // Reset sidebar based on current state
                 if (isMobile) {
-                    handleMobileSidebar();
-                } else {
-                    // Desktop - ensure no mobile restrictions
-                    body.style.overflow = '';
-                    body.style.position = '';
-                    body.style.width = '';
-                    body.style.height = '';
-                    removeSidebarOverlay();
-                }
-            }
-            
-            // Handle mobile sidebar behavior with scroll prevention
-            function handleMobileSidebar() {
-                const body = document.body;
-                const sidebar = document.querySelector('.main-sidebar');
-                const isMobile = window.innerWidth <= 768;
-                
-                if (!isMobile) return;
-                
-                if (body.classList.contains('sidebar-open')) {
-                    // Sidebar is opening on mobile - prevent page scroll
-                    body.style.overflow = 'hidden';
-                    body.style.position = 'fixed';
-                    body.style.width = '100%';
-                    body.style.height = '100%';
-                    body.style.top = '0';
-                    body.style.left = '0';
-                    
-                    if (sidebar) {
-                        sidebar.style.width = '100vw';
+                    if (!body.classList.contains('sidebar-open')) {
+                        sidebar.style.left = '-280px';
+                        removeSidebarOverlay();
+                    } else {
+                        sidebar.style.width = '280px'; // Set explicit width
                         sidebar.style.left = '0';
-                        sidebar.style.transform = 'translateX(0)';
-                        sidebar.style.backgroundColor = '#38403e';
-                        sidebar.style.zIndex = '1040';
+                        sidebar.style.backgroundColor = '#38403e'; // Match desktop background
+                        
+                        // Also set the brand link bg color
+                        const brandLink = sidebar.querySelector('.brand-link');
+                        if (brandLink) {
+                            brandLink.style.backgroundColor = '#38403e';
+                        }
+                        
+                        addSidebarOverlay();
                     }
-                    
-                    addSidebarOverlay();
-                } else {
-                    // Sidebar is closing on mobile - restore page scroll
-                    body.style.overflow = '';
-                    body.style.position = '';
-                    body.style.width = '';
-                    body.style.height = '';
-                    body.style.top = '';
-                    body.style.left = '';
-                    
-                    if (sidebar) {
-                        sidebar.style.transform = 'translateX(-100%)';
-                    }
-                    
-                    removeSidebarOverlay();
                 }
             }
             
-            // Add overlay for mobile sidebar with improved styling
+            // Add overlay for mobile sidebar
             function addSidebarOverlay() {
                 removeSidebarOverlay(); // Remove any existing overlay
                 
                 const overlay = document.createElement('div');
                 overlay.id = 'sidebar-overlay';
-                overlay.style.cssText = `
-                    position: fixed !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    width: 100vw !important;
-                    height: 100vh !important;
-                    background: rgba(0, 0, 0, 0.7) !important;
-                    z-index: 1039 !important;
-                    display: block !important;
-                    backdrop-filter: blur(3px) !important;
-                    -webkit-backdrop-filter: blur(3px) !important;
-                `;
                 
                 overlay.addEventListener('click', function() {
-                    const body = document.body;
-                    body.classList.remove('sidebar-open');
-                    handleMobileSidebar();
-                });
-                
-                // Handle escape key to close sidebar
-                const escapeHandler = function(e) {
-                    if (e.key === 'Escape') {
-                        const body = document.body;
-                        body.classList.remove('sidebar-open');
-                        handleMobileSidebar();
-                        document.removeEventListener('keydown', escapeHandler);
+                    const sidebar = document.querySelector('.main-sidebar');
+                    document.body.classList.remove('sidebar-open');
+                    if (sidebar) {
+                        sidebar.style.left = '-280px';
                     }
-                };
-                document.addEventListener('keydown', escapeHandler);
+                    this.remove();
+                });
                 
                 document.body.appendChild(overlay);
             }
@@ -335,75 +199,21 @@
                 if (overlay) overlay.remove();
             }
             
-            // Initialize proper scrollbar behavior - AGGRESSIVE APPROACH
-            function initSidebarScrollbar() {
-                const mainSidebar = document.querySelector('.main-sidebar');
-                const isMobile = window.innerWidth <= 768;
-                
-                if (mainSidebar) {
-                    if (isMobile) {
-                        // Mobile: ensure sidebar is scrollable
-                        mainSidebar.style.height = '100vh';
-                        mainSidebar.style.overflowY = 'auto';
-                        mainSidebar.style.overflowX = 'hidden';
-                        
-                        const sidebar = mainSidebar.querySelector('.sidebar');
-                        const nav = mainSidebar.querySelector('.nav-sidebar');
-                        
-                        if (sidebar) {
-                            sidebar.style.height = 'auto';
-                            sidebar.style.minHeight = '100vh';
-                            sidebar.style.overflow = 'visible';
-                            sidebar.style.padding = '10px 0';
-                        }
-                        
-                        if (nav) {
-                            nav.style.height = 'auto';
-                            nav.style.overflow = 'visible';
-                            nav.style.paddingBottom = '50px';
-                        }
-                    } else {
-                        // Desktop: force scrollable container
-                        mainSidebar.style.height = '100vh';
-                        mainSidebar.style.overflowY = 'scroll';
-                        mainSidebar.style.overflowX = 'hidden';
-                        
-                        const sidebar = mainSidebar.querySelector('.sidebar');
-                        const nav = mainSidebar.querySelector('.nav-sidebar');
-                        
-                        if (sidebar) {
-                            sidebar.style.height = 'auto';
-                            sidebar.style.minHeight = '150vh';
-                            sidebar.style.overflow = 'visible';
-                            sidebar.style.paddingBottom = '20px';
-                        }
-                        
-                        if (nav) {
-                            nav.style.height = 'auto';
-                            nav.style.minHeight = '150vh';
-                            nav.style.paddingBottom = '100px';
-                        }
-                        
-                        // Force scroll to test
-                        mainSidebar.scrollTop = 10;
-                        setTimeout(() => {
-                            mainSidebar.scrollTop = 0;
-                        }, 100);
-                    }
-                    
-                    console.log(`Scrollbar initialized on ${isMobile ? 'mobile' : 'desktop'} sidebar`);
-                }
-            }
-            
-            // Fix sidebar menu items styling for both mobile and desktop
+            // Fix sidebar menu items styling
             function fixSidebarMenuItems() {
+                // Get all menu items
                 const menuItems = document.querySelectorAll('.nav-sidebar .nav-item .nav-link');
                 const sidebar = document.querySelector('.main-sidebar');
-                const isMobile = window.innerWidth <= 768;
                 
                 // Set the background color for the entire sidebar
                 if (sidebar) {
                     sidebar.style.backgroundColor = '#38403e';
+                    
+                    // Set background for child elements
+                    const navItems = sidebar.querySelectorAll('.nav-sidebar, .nav-item');
+                    navItems.forEach(item => {
+                        item.style.backgroundColor = 'transparent';
+                    });
                 }
                 
                 menuItems.forEach(item => {
@@ -411,68 +221,43 @@
                     const icon = item.querySelector('i, .fa, .fas, .far, .fab, .nav-icon');
                     const text = item.querySelector('p, span:not(.badge):not(.right)');
                     
-                    if (!isMobile) {
-                        // Desktop styling
-                        if (icon) {
-                            icon.style.width = '25px';
-                            icon.style.textAlign = 'center';
-                            icon.style.marginRight = '10px';
-                            icon.style.fontSize = '16px';
-                        }
-                        
-                        if (text) {
-                            text.style.display = 'block';
-                            text.style.overflow = 'hidden';
-                            text.style.textOverflow = 'ellipsis';
-                            text.style.whiteSpace = 'nowrap';
-                            text.style.margin = '0';
-                        }
-                        
-                        // Style the link itself for desktop
-                        item.style.display = 'flex';
-                        item.style.alignItems = 'center';
-                        item.style.padding = '12px 20px';
-                        item.style.overflow = 'hidden';
-                        item.style.backgroundColor = 'transparent';
+                    if (icon) {
+                        // Style the icon
+                        icon.style.width = '25px';
+                        icon.style.textAlign = 'center';
+                        icon.style.float = 'left';
+                        icon.style.fontSize = '16px';
                     }
+                    
+                    if (text) {
+                        // Style the text
+                        text.style.display = 'block';
+                        text.style.overflow = 'hidden';
+                        text.style.textOverflow = 'ellipsis';
+                        text.style.whiteSpace = 'nowrap';
+                    }
+                    
+                    // Style the link itself
+                    item.style.display = 'flex';
+                    item.style.alignItems = 'center';
+                    item.style.padding = '12px 20px';
+                    item.style.overflow = 'hidden';
+                    item.style.backgroundColor = 'transparent';
                 });
             }
             
+            // Initialize
             setupSidebar();
-            initSidebarScrollbar();
-            fixSidebarMenuItems();
             
-            // Re-initialize after a delay to ensure DOM is ready
-            setTimeout(() => {
-                initSidebarScrollbar();
-                fixSidebarMenuItems();
-            }, 500);
-            
-            // Re-initialize on window resize with mobile behavior handling
+            // Handle window resize
             window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    // Remove mobile classes on larger screens
+                    document.body.classList.remove('sidebar-open');
+                    removeSidebarOverlay();
+                }
+                
                 setupSidebar();
-                setTimeout(() => {
-                    initSidebarScrollbar();
-                    fixSidebarMenuItems();
-                    
-                    // Handle mobile sidebar state on resize
-                    const isMobile = window.innerWidth <= 768;
-                    const body = document.body;
-                    
-                    if (!isMobile) {
-                        // If switching to desktop, clean up mobile state
-                        body.style.overflow = '';
-                        body.style.position = '';
-                        body.style.width = '';
-                        body.style.height = '';
-                        body.style.top = '';
-                        body.style.left = '';
-                        removeSidebarOverlay();
-                    } else if (body.classList.contains('sidebar-open')) {
-                        // If switching to mobile and sidebar is open, apply mobile styles
-                        handleMobileSidebar();
-                    }
-                }, 100);
             });
         });
     </script>
