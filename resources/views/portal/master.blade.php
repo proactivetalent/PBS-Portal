@@ -186,6 +186,17 @@
                 font-size: 15px !important;
                 font-weight: 400 !important;
             }
+            
+            /* Footer text alignment for mobile */
+            .main-footer {
+                text-align: left !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            
+            .main-footer * {
+                text-align: left !important;
+            }
         }
     </style>
     
