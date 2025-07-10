@@ -314,7 +314,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
-}
+} 
 
 @media (min-width: 576px) {
   .footer-content {
@@ -577,7 +577,6 @@ html, body {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-top: 60px; /* Equal to the height of the navbar */
   box-sizing: border-box;
   position: relative;
 }
