@@ -20,7 +20,7 @@
         @if(config('adminlte.usermenu_image'))
             <img src="{{ Auth::user()->adminlte_image() }}"
                  class="user-image img-circle elevation-2"
-                 alt="{{ Auth::user()->name }}">
+                 alt="User profile picture for {{ Auth::user()->name }} on PBS.NYC admin panel">
         @endif
         <span @if(config('adminlte.usermenu_image')) class="d-none d-md-inline" @endif>
             {{ Auth::user()->name }}
@@ -37,7 +37,7 @@
                 @if(config('adminlte.usermenu_image'))
                     <img src="{{ Auth::user()->adminlte_image() }}"
                          class="img-circle elevation-2"
-                         alt="{{ Auth::user()->name }}">
+                         alt="User profile picture for {{ Auth::user()->name }} on PBS.NYC admin panel">
                 @endif
                 <p class="@if(!config('adminlte.usermenu_image')) mt-0 @endif">
                     {{ Auth::user()->name }}

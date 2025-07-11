@@ -243,7 +243,7 @@
 <main>
     <div class="container">
         <div class="grid-images">
-            <div class="tile-image" style="width: 98%;"><img alt="" src="https://dummyimage.com/400x200"></div>
+            <div class="tile-image" style="width: 98%;"><img alt="Placeholder image" src="https://dummyimage.com/400x200"></div>
             <div class="clearfix"></div>
         </div>
     </div>

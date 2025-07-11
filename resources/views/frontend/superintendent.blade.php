@@ -35,7 +35,7 @@
                     <div class="col-md-4">
                         <div class="feature-box center media-box">
                             <div class="fbox-media">
-                                <img src="images/services/superintender.png" class="divcenter" alt="Image 1"
+                                <img src="images/services/superintender.png" class="divcenter" alt="Superintendent service image"
                                      style="height:4vw; width: auto;">
                             </div>
                             <div class="fbox-desc clearfix">
@@ -55,7 +55,7 @@
                     <div class="col-md-4">
                         <div class="feature-box center media-box">
                             <div class="fbox-media">
-                                <img src="images/services/management.png" class="divcenter" alt="Image 2"
+                                <img src="images/services/management.png" class="divcenter" alt="Management service image"
                                      style="height:4vw; width: auto;">
                             </div>
                             <div class="fbox-desc clearfix">
@@ -71,7 +71,7 @@
                     <div class="col-md-4">
                         <div class="feature-box center media-box">
                             <div class="fbox-media">
-                                <img src="images/services/certificate.png" class="divcenter" alt="Image 3"
+                                <img src="images/services/certificate.png" class="divcenter" alt="Certification service image"
                                      style="height:4vw; width: auto;">
                             </div>
                             <div class="fbox-desc clearfix">

@@ -26,7 +26,7 @@
                             <div class="card-body pt-0">
                                 <div class="row">
                                     <div class="col-7 text-center">
-                                        <img src="{{$property->image()}}" alt="" class="img-fluid">
+                                        <img src="{{$property->image()}}" alt="Property image for {{$property->getAddressOnlyWithHouseStreet()}} {{\App\Helpers\Helper::getBoroName($property->boro)}}" class="img-fluid">
                                     </div>
                                     <div class="col-5">
                                         <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist

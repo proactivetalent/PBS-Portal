@@ -23,7 +23,7 @@
         {{-- Lockscreen logo --}}
         <div class="lockscreen-logo">
             <a href="{{ $dashboard_url }}">
-                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50">
+                <img src="{{ asset(config('adminlte.logo_img')) }}" height="50" alt="PBS.NYC password confirmation logo">
                 {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
             </a>
         </div>
@@ -37,7 +37,7 @@
         <div class="lockscreen-item">
             @if(config('adminlte.usermenu_image'))
                 <div class="lockscreen-image">
-                    <img src="{{ Auth::user()->adminlte_image() }}" alt="{{ Auth::user()->name }}">
+                    <img src="{{ Auth::user()->adminlte_image() }}" alt="User profile picture for {{ Auth::user()->name }} on PBS.NYC password confirmation page">
                 </div>
             @endif
 

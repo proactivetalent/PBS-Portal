@@ -76,7 +76,7 @@
 
                 <div class="user-block col-2">
                     <img  src="{{$user->adminlte_image()}}" width="300"
-                         class="user-image img-circle elevation-2" alt="admin">
+                         class="user-image img-circle elevation-2" alt="Profile image for {{$user->name}}">
                     <span class="username"><a href="#">{{$user->name}}</a></span>
                     <span class="description">Registered - {{$user->created_at->isoformat('LL')}}</span>
                 </div>

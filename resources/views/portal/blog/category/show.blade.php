@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-8">
             @if($category->featured)
-                <img height="300px" src="{{Storage::url($category->featured)}}">
+                <img height="300px" src="{{Storage::url($category->featured)}}" alt="Featured image for {{$category->name}}">
             @endif
 
             <h1>{{ $category->name }}</h1>

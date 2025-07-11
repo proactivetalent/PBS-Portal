@@ -46,7 +46,7 @@
                         <td>{{$article->title}}</td>
                         <td>
                             @if($article->featured)
-                                <img height="50px" src="{{Storage::url($article->featured)}}" alt="{{$article->title}}" class="img-thumbnail" onerror="this.src='{{asset('images/placeholder-article.svg')}}';">
+                                <img height="50px" src="{{Storage::url($article->featured)}}" alt="Featured image for {{$article->title}}" class="img-thumbnail" onerror="this.src='{{asset('images/placeholder-article.svg')}}';">
                             @else
                                 <img height="50px" src="{{asset('images/placeholder-article.svg')}}" alt="No Image" class="img-thumbnail">
                             @endif

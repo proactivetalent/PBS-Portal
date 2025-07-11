@@ -3,7 +3,7 @@
 @php($pageTitle ='General Contracting')
 
 @section('meta')
-    <meta name="description" content="Professional general contracting services from PBS.NYC. We provide comprehensive construction solutions and project management for your NYC building projects.">
+	<meta name="description" content="Professional general contracting services from PBS.NYC. We provide comprehensive construction solutions and project management for your NYC building projects.">
 @stop
 
 @section('css')
@@ -20,7 +20,7 @@
 @section('content')
 	{{--content bölümü--}}
 	<!-- Content
-    ============================================= -->
+	============================================= -->
 
 	<section class="bg-transparent" id="content">
 
@@ -31,26 +31,26 @@
 					<div class="row">
 						<div class="col-lg-2 my-sm-5 mt-0 mb-5">
 							<div class="container center">
-								<img class="my-sm-5 mt-0 mb-5" src="{{asset("images/logos/JCCM.png")}}">
+<img class="my-sm-5 mt-0 mb-5" src="{{asset("images/logos/JCCM.png")}}" alt="JCCM Logo">
 							</div>
 						</div>
 						<div class="col-lg-8 center">
 							<blockquote class="quote p-1 nomargin">
 								<br/><br/>
 								<span>In addition to its vast network, PBS is proud to be partnered with JC Consulting & Management<a target="_blank"
-								                                                                                                      href="https://jccmanagement.com/">
-                                        JC Consulting&Management</a>.
-                                </span>
+																																	  href="https://jccmanagement.com/">
+										JC Consulting&Management</a>.
+								</span>
 								<br/>
 								<br/>
 								<span>
-                                JCCM is a New York City-based General Contractor, Construction and Development Management
-                                    firm specializing in complex and diverse projects. JCCM has been involved in over 2.5MM
-                                    square feet of ground-up development projects that consistently exceed industry standards.
-                                    With extensive knowledge and dedication to the highest quality outcomes, JCCM is able to deliver
-                                    projects on schedule and on budget, an essential function of the PBS brand.
+								JCCM is a New York City-based General Contractor, Construction and Development Management
+									firm specializing in complex and diverse projects. JCCM has been involved in over 2.5MM
+									square feet of ground-up development projects that consistently exceed industry standards.
+									With extensive knowledge and dedication to the highest quality outcomes, JCCM is able to deliver
+									projects on schedule and on budget, an essential function of the PBS brand.
 
-                                </span>
+								</span>
 
 							</blockquote>
 							<blockquote class="quote blockquote-reverse nobottommargin">
@@ -59,7 +59,7 @@
 						</div>
 						<div class="col-lg-2 my-sm-5 mt-0 mb-5">
 							<div class="container center">
-								<img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}">
+<img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}" alt="PBS NYC Logo">
 							</div>
 						</div>
 
@@ -72,7 +72,7 @@
 					<div class="row">
 						<div class="col-lg-2 my-sm-5 mt-0 mb-0">
 							<div class="container center">
-								<img class="my-sm-5 mt-0 mb-0" src="{{asset("images/logos/titanlogokucuk.png")}}">
+<img class="my-sm-5 mt-0 mb-0" src="{{asset("images/logos/titanlogokucuk.png")}}" alt="Titan Logo">
 							</div>
 						</div>
 						<div class="col-lg-8 center">
@@ -95,7 +95,7 @@
 						</div>
 						<div class="col-lg-2 my-sm-5 mt-0 mb-5">
 							<div class="container center">
-								<img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}">
+<img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}" alt="PBS NYC Logo">
 							</div>
 						</div>
 

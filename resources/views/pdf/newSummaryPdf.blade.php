@@ -179,7 +179,7 @@
 <div style="margin: 0 40px;">
     <div class="newsection">
         <div style="text-align: center; padding-top: 22%">
-            <img src="{{ asset('images/logos/black.jpg')}}">
+            <img src="{{ asset('images/logos/black.jpg')}}" alt="PBS.NYC black logo">
         </div>
         <h1 style="padding-top: 200px; text-align: center">SUMMARY REPORT</h1>
         <h2 style="text-align: center">Dear {{$user->name}}</h2>

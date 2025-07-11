@@ -40,7 +40,7 @@
                                     <div class="front no-after"
                                          style="background: #ffffff url({{asset('images/flips/alerts.png')}}); background-size: cover;">
                                         ,
-                                        <img width="13%" alt="" class="noradius nobg tleft"
+                                        <img width="13%" alt="Alert icon" class="noradius nobg tleft"
                                              src="{{ asset('images/icons/1.png') }}">
                                         <div class="inner">
                                             <div class="feature-box media-box">
@@ -53,7 +53,7 @@
                                             </div>
                                         </div>
 
-                                        <img width="10%" alt="" class="mb-1 mr-1 noradius sagAltOk nobg"
+                                        <img width="10%" alt="Right arrow icon" class="mb-1 mr-1 noradius sagAltOk nobg"
                                              src="{{ asset('images/icons/sagok.svg') }}">
 
                                     </div>
@@ -78,7 +78,7 @@
                                 <div class="flip-card">
                                     <div class="front no-after"
                                          style="background: #ffffff url({{asset('images/flips/membership.png')}}); background-size: cover;">
-                                        <img width="13%" alt="" class="noradius ml-2 nobg tleft"
+                                        <img width="13%" alt="Membership icon" class="noradius ml-2 nobg tleft"
                                              src="{{ asset('images/icons/3.png') }}">
                                         <div class="inner">
                                             <div class="feature-box media-box">
@@ -89,7 +89,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img width="10%" alt="" class="mb-1 mr-1 noradius sagAltOk nobg"
+                                        <img width="10%" alt="Right arrow icon" class="mb-1 mr-1 noradius sagAltOk nobg"
                                              src="{{ asset('images/icons/sagok.svg') }}">
                                     </div>
                                     <div class="back dark"
@@ -110,7 +110,7 @@
                                 <div class="flip-card">
                                     <div class="front no-after"
                                          style="background: #ffffff url({{asset('images/flips/planning.png')}}); background-size: cover;">
-                                        <img width="13%" alt="" class="noradius ml-2 nobg tleft"
+                                        <img width="13%" alt="Planning icon" class="noradius ml-2 nobg tleft"
                                              src="{{ asset('images/icons/2.png') }}">
                                         <div class="inner">
                                             <div class="feature-box media-box">
@@ -120,7 +120,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img width="10%" alt="" class="mb-1 mr-1 noradius sagAltOk nobg"
+                                        <img width="10%" alt="Right arrow icon" class="mb-1 mr-1 noradius sagAltOk nobg"
                                              src="{{ asset('images/icons/sagok.svg') }}">
                                     </div>
                                     <div class="back dark"
@@ -142,7 +142,7 @@
                                 <div class="flip-card">
                                     <div class="front no-after"
                                          style="background: #ffffff url({{asset('images/flips/construction.png')}}); background-size: cover;">
-                                        <img width="13%" alt="" class="noradius ml-2 nobg tleft"
+                                        <img width="13%" alt="Development icon" class="noradius ml-2 nobg tleft"
                                              src="{{ asset('images/icons/4.png') }}">
                                         <div class="inner">
                                             <div class="feature-box media-box">
@@ -153,7 +153,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <img width="10%" alt="" class="mb-1 mr-1 noradius sagAltOk nobg"
+                                        <img width="10%" alt="Right arrow icon" class="mb-1 mr-1 noradius sagAltOk nobg"
                                              src="{{ asset('images/icons/sagok.svg') }}">
                                     </div>
                                     <div class="back dark"
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="divider divider-center"><img src="{{ asset('images/others/dividerlogo50.png') }}"
-                                                         width="30px"/></div>
+                                                         width="30px" alt="Divider logo"/></div>
 
                 <div class="col_one_third">
                     <div class="feature-box p-0">
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="divider divider-center"><img src="{{ asset('images/others/dividerlogo50.png') }}"
-                                                         width="30px"/></div>
+                                                         width="30px" alt="Divider logo"/></div>
 
                 <div class="container-fluid clearfix">
                     <div
@@ -275,7 +275,7 @@
 
                 <div class="divider divider-center" id="iletisim"><img
                             src="{{ asset('images/others/dividerlogo50.png') }}"
-                            width="30px"/>
+                            width="30px" alt="Divider logo"/>
                 </div>
 
                 <div class="row justify-content-around">

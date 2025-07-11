@@ -91,7 +91,7 @@
 <div style="margin: 0 40px;">
     <div class="newsection">
         <div style="text-align: center; padding-top: 3%">
-            <img width="70%" src="{{asset('images/summary/report.png')}}">
+            <img width="70%" src="{{asset('images/summary/report.png')}}" alt="PBS.NYC summary report image">
         </div>
         <h1 style="padding-top: 5%; text-align: center">SUMMARY REPORT</h1>
         <h2 style="padding-top: 5%; text-align: center">Dear {{$user->name}}</h2>
@@ -346,7 +346,7 @@
 
     <div class="newsection" style="text-align: left;">
         <h1 style="padding-top: 40%; text-align: center"><img
-                    src="{{asset('images/summary/iconDOBbw-100.png')}}"><br/><br/>DEPARTMENT
+                    src="{{asset('images/summary/iconDOBbw-100.png')}}" alt="DOB badge icon"><br/><br/>DEPARTMENT
             OF BUILDINGS</h1>
     </div> {{--  DOB --}}
     {{--                        PROPERTY SUMARY--}}
@@ -488,7 +488,7 @@
     <div class="newsection" style="text-align: left;">
 
         <h1 style="padding-top: 40%; text-align: center"><img
-                    src="{{asset('images/summary/iconECB-100.png')}}"><br/><br/>ENVIROMENTAL
+                    src="{{asset('images/summary/iconECB-100.png')}}" alt="Environmental Control Board badge icon"><br/><br/>ENVIROMENTAL
             CONTROL BOARD</h1>
     </div> {{--  Environmental Control Board --}}
     @if ($ecbHC!=0)
@@ -878,7 +878,7 @@
     <br/>
     <div class="newsection" style="text-align: left;">
 
-        <h1 style="padding-top: 40%; text-align: center"><img src="{{asset('images/summary/iconFDNYbw-100.png')}}"><br/><br/>NYC
+        <h1 style="padding-top: 40%; text-align: center"><img src="{{asset('images/summary/iconFDNYbw-100.png')}}" alt="FDNY badge icon"><br/><br/>NYC
             FIRE DEPARTMENT</h1>
     </div> {{--  New York City Fire Department --}}
     @if ($fdnyAVOC!=0)
@@ -1189,7 +1189,7 @@
     <div class="newsection" style="text-align: left;">
 
         <h1 style="padding-top: 40%; text-align: center"><img
-                    src="{{asset('images/summary/iconHPDbw-100.png')}}"><br/><br/>DEPARTMENT
+                    src="{{asset('images/summary/iconHPDbw-100.png')}}" alt="HPD badge icon"><br/><br/>DEPARTMENT
             OF HOUSING PRESERVATION</h1>
     </div> {{--  Department of Housing Preservation --}}
     @if ($hpdVC!=0)
@@ -1472,7 +1472,7 @@
     @endif{{--  HPD Vacate Orders  --}}
     <div class="newsection" style="text-align: left;">
         <h1 style="padding-top: 40%; text-align: center"><img
-                    src="{{asset('images/summary/iconINSPECTION-100.png')}}"><br/><br/>INSPECTIONS</h1>
+                    src="{{asset('images/summary/iconINSPECTION-100.png')}}" alt="Inspections badge icon"><br/><br/>INSPECTIONS</h1>
     </div> {{--Inspections--}}
     @if ($dobNSBC==0)
         <div class="newsection" style="text-align: left;">
@@ -1722,7 +1722,7 @@
     @endif{{-- dotSidewalkInspections --}}
     <div class="newsection" style="text-align: left;">
         <h1 style="padding-top: 40%; text-align: center">
-            <img src="{{asset('images/summary/iconPERMIT-100.png')}}"><br/><br/>PERMITS</h1>
+            <img src="{{asset('images/summary/iconPERMIT-100.png')}}" alt="Permit badge icon"><br/><br/>PERMITS</h1>
     </div> {{--Permits--}}
     @if ($dobPC!=0)
         <div class="newsection" style="text-align: left;">
@@ -1949,7 +1949,7 @@
 
     <div class="newsection" style="text-align: left;">
         <h1 style="padding-top: 40%; text-align: center">
-            <img width="" src="{{asset('images/summary/others.png')}}"><br/><br/>OTHERS</h1>
+            <img width="" src="{{asset('images/summary/others.png')}}" alt="Other badge icon"><br/><br/>OTHERS</h1>
     </div> {{--Others--}}
     @if ($SRC!=0)
         <div class="newsection" style="text-align: left;">
@@ -2110,7 +2110,7 @@
         <span style="padding-top: 30px"><i>This report shows a summary of all properties within. You can access every detail and customize your alerts by   <a
                         href="https://pbs.nyc/portal/">using our member portal.</a></i></span>
         <h1 style="padding-top: 5%; text-align: center">
-            <img src="{{asset('images/summary/consultant.png')}}"><br/></h1>
+            <img src="{{asset('images/summary/consultant.png')}}" alt="Consultant badge icon"><br/></h1>
         <div style="margin: 0 30%; border-radius: 50px; width:40%;text-align: center;height: 50px;padding:10px; background:rgba(35,36,35,0.54);">
             <a href="https://pbs.nyc/calender" target="_blank"
                style="display:block;font-size:16px; text-align:center; font-weight:bold;color:#ffffff; text-decoration:underline;">

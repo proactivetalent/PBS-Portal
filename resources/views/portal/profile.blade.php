@@ -644,12 +644,12 @@
                             <h3 class="profile-username text-center">{{$user->name}}</h3>
                             @if(Auth::check() && Auth::user()->hasRole('admin'))
                                 <p class="text-center">
-                                    <img width="50px" src="{{asset('images/others/PBSSTAFF.png')}}">
+                                    <img width="50px" src="{{asset('images/others/PBSSTAFF.png')}}" alt="PBS Staff Badge">
                                 </p>                            @else
                                 <p class="text-center">@if($user->subscription() && $user->subscription()->stripe_price==="price_1HAytXCHIQPIgwSn9ZKMI4NF")
-                                        <img width="50px" src="{{asset('images/others/gold.png')}}">
+                                        <img width="50px" src="{{asset('images/others/gold.png')}}" alt="Gold Member Badge">
                                     @elseif($user->subscription() && $user->subscription()->stripe_price==="price_1H6CrcCHIQPIgwSnOHJIVdUk") <img
-                                                width="50px" src="{{asset('images/others/bronze.png')}}">
+                                                width="50px" src="{{asset('images/others/bronze.png')}}" alt="Bronze Member Badge">
                                     @else Undefined @endif</p>
                             @endif
 

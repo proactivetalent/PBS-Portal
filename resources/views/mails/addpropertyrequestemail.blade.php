@@ -36,7 +36,7 @@
                         style="font-size:0pt; line-height:0pt; text-align:left;"><img
                                 width="100%" src="{{asset("images/others/mail-top-3.jpg")}}"
                                 border="0"
-                                alt=""/></td>
+                                alt="Mail header image"/></td>
                 </tr>
 
                 <tr>

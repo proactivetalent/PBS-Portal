@@ -43,7 +43,7 @@
                         <td>{{$category->name}}</td>
                         <td>
                             @if($category->featured)
-                                <img height="50px" src="{{Storage::url($category->featured)}}" alt="{{$category->name}}" class="img-thumbnail" onerror="this.src='{{asset('images/placeholder-article.svg')}}';">
+                                <img height="50px" src="{{Storage::url($category->featured)}}" alt="Featured image for {{$category->name}}" class="img-thumbnail" onerror="this.src='{{asset('images/placeholder-article.svg')}}';">
                             @else
                                 <img height="50px" src="{{asset('images/placeholder-article.svg')}}" alt="No Image" class="img-thumbnail">
                             @endif

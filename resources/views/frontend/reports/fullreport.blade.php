@@ -67,7 +67,7 @@
             </div>
 
             <div class="divider divider-center"><img src="{{ asset('images/others/dividerlogo50.png') }}"
-                                                     width="30px"/></div>
+                                                     width="30px" alt="Divider logo"/></div>
 
             <section id="page-title">
 

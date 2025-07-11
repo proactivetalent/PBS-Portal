@@ -55,7 +55,7 @@
                             </tr>
                             <tr>
                                 <td style=" width:10%"><img class="siyaharka" width="30px"
-                                                            src="{{asset("images/emailicons/email.png")}}">
+                                                            src="{{asset("images/emailicons/email.png")}}" alt="Email icon"></td>
                                 </td>
                                 <td style="width:20%; text-align: left"><b>Email</b></td>
                                 <td style="text-align: left">{{$content["email"]}}</td>
@@ -63,7 +63,7 @@
                             <tr>
 
                                 <td style="width:10%"><img class="siyaharka" style=" width:30px"
-                                                           src="{{asset("images/emailicons/pass.png")}}">
+                                                           src="{{asset("images/emailicons/pass.png")}}" alt="Password icon"></td>
                                 </td>
                                 <td style=" width:20%; text-align:left;"><b>Password</b></td>
                                 <td style="text-align: left">{{$content["password"]}}</td>
@@ -71,7 +71,7 @@
                             <tr>
 
                                 <td width="10%"><img class="siyaharka" width="30px"
-                                                     src="{{asset("images/emailicons/phone.png")}}">
+                                                     src="{{asset("images/emailicons/phone.png")}}" alt="Phone icon"></td>
                                 </td>
                                 <td style=" width:20%; text-align: left;"><b>Phone Number</b>
                                 </td>

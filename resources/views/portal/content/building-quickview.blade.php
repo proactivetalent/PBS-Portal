@@ -524,7 +524,7 @@
             // Create popup content
             var popupContent = '<div class="info_content">' +
                 '<h3>{{$property->house_number}} {{$property->stname}}, {{\App\Helpers\Helper::getBoroName($property->boro)}}</h3>' +
-                '<p><img src="{{$property->image()}}" style="max-width:100px;height:auto;"></p>' +
+                '<p><img src="{{$property->image()}}" style="max-width:100px;height:auto;" alt="Property image for {{$property->getAddressOnlyWithHouseStreet()}} {{\App\Helpers\Helper::getBoroName($property->boro)}}"></p>' +
                 '</div>';
             
             marker.bindPopup(popupContent);

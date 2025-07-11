@@ -6,11 +6,11 @@
             <!-- Logo   ============================================= -->
             <div id="logo">
                 <a class="standard-logo" data-dark-logo="{{ asset('images/logos/logo.png') }}" href="{{route('home')}}"><img
-                            alt="Proactive Building Solutions | PBS.NYC"
+                            alt="Proactive Building Solutions | PBS.NYC logo"
                             src="{{ asset('images/logos/logo.png') }}"></a>
                 <a class="retina-logo" data-dark-logo="{{ asset('images/logos/logo.png') }}"
                    href="{{route('home')}}"><img
-                            alt="Proactive Building Solutions | PBS.NYC"
+                            alt="Proactive Building Solutions | PBS.NYC retina logo"
                             src="{{ asset('images/logos/logo.png') }}"></a>
             </div>
             <!-- #logo end -->

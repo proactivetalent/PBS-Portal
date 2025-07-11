@@ -66,7 +66,7 @@
                     <div class="heading-block">
                         <h3 class="text-white">Many options and ideas.</h3>
                         <span class="text-gray ikiyanayasla">Our team is firstly focus on customer desire. On that concept, we are making the first ideas for the customer to make everything stable!
-							.</span>
+                            .</span>
                     </div>
 
                     <p class="text-white ikiyanayasla">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="col_two_fifth topmargin col_last" style="min-height: 350px">
-                    <img data-animate="fadeIn" src="images/services/ampul.png" alt="dene">
+                    <img data-animate="fadeIn" src="images/services/ampul.png" alt="Lightbulb icon">
                 </div>
 
             </div>

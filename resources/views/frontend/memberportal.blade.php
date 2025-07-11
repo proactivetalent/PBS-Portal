@@ -22,7 +22,7 @@
 
 
     <!-- Content
-		============================================= -->
+        ============================================= -->
     <section id="slider" class="slider-element slider-parallax full-screen dark"
              style="background: url({{asset('images/others/newyork-arkaplan.jpg')}}) center center no-repeat; background-size: cover">
 
@@ -337,7 +337,7 @@
                         <div id="snav-content1" aria-labelledby="ui-id-1" role="tabpanel"
                              class="ui-tabs-panel ui-corner-bottom ui-widget-content" aria-hidden="false" style="">
                             <h3>Adding Properties</h3>
-                            <img class="alignright img-responsive" src="{{asset('images/others/captured.gif')}}" alt="">
+                            <img class="alignright img-responsive" src="{{asset('images/others/captured.gif')}}" alt="Captured animation">
 
                             Our user-friendly tool allows you to add or remove properties within seconds.
                             You can add by address, BIN or <a href="{{route('addpropertyrequest')}}">sending us your list of properties</a>.
@@ -348,7 +348,7 @@
                              style="display: none;">
                             <h3>Unlimited Custom Inspections</h3>
                             <img class="alignright img-responsive" src="{{asset('images/others/custominspection.gif')}}"
-                                 alt="">
+                                 alt="Custom inspection animation">
                             With customized inspections and alerts you will never miss a deadline again.
                             From DOB annual boiler to FDNY five year hydrostatic tests, we have you covered.
                             Add unlimited inspections by filling out our user-friendly inspection tool.

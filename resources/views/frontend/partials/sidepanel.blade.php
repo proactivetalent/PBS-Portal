@@ -52,7 +52,7 @@
                             {{--                            <a href="#"><i class="bg-section icon-et-profile-male"></i></a>--}}
                             <img class="profile-user-img img-fluid img-circle"
                                  src="{{auth()->user()->adminlte_image()}}"
-                                 alt="User profile picture">
+                                 alt="{{auth()->user()->name}} profile picture">
                         </div>
                         <h3>{{auth()->user()->name}}    </h3>
                         <span class="subtitle small"> {{auth()->user()->email}}</span>

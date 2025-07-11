@@ -22,7 +22,7 @@
 
 
     <!-- Content
-		============================================= -->
+        ============================================= -->
     <section class="bg-transparent" id="content">
 
         <div class="content-wrap">
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="container center">
-                                <img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}">
+<img class="my-sm-5 mt-0 mb-5" src="{{asset('images/logo@2x.png')}}" alt="PBS NYC Logo">
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="team-image d-none pr-0 align-self-center col-4">
-                                    <img class="rounded-circle  " src="{{asset('images/team/male.png')}}" alt="Jon">
+<img class="rounded-circle  " src="{{asset('images/team/male.png')}}" alt="Jon Credendino, Executive Director">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>Jon Credendino</h4><span>Executive Director</span><br/></div>
@@ -129,7 +129,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="d-none team-image pr-0 align-self-center col-4">
-                                    <img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Abdallah">
+<img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Abdallah Elcherbini, Registered Architect">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>Abdallah Elcherbini</h4><span>Registered Architect</span><br/></div>
@@ -170,7 +170,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="team-image d-none pr-0 align-self-center col-4">
-                                    <img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Arthur">
+<img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Arthur Estupinian, Licensed Master Plumber">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>Arthur Estupinian</h4><span>Licensed Master Plumber</span><br/></div>
@@ -213,7 +213,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="team-image d-none pr-0 align-self-center col-4">
-                                    <img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Hal">
+<img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Hal Ozkurt, Licensed Master Electrician">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>Hal Ozkurt</h4><span>Licensed Master Electrician</span><br/>
@@ -255,7 +255,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="team-image d-none pr-0 align-self-center col-4">
-                                    <img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Alex">
+<img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="James Powers, MEP Engineer">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>James Powers</h4><span>MEP Engineer</span><br/></div>
@@ -294,7 +294,7 @@
 
                             <div class="team opak-arkaplan text-center row">
                                 <div class="team-image pr-0 d-none align-self-center col-4">
-                                    <img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Glen">
+<img class="rounded-circle" src="{{asset('images/team/male.png')}}" alt="Glen, Team Member">
                                 </div>
                                 <div class="team-desc pl-0 col-12">
                                     <div class="team-title"><h4>Glen Langer</h4><span>Structural Engineer</span><br/></div>

@@ -81,7 +81,7 @@
                     </div>
                     <div class="opacity7 col-lg-6 col-md-9 ">
                         <img width="50%" class="h1 t700 tada animated" data-animate="tada" src="images/logos/White.png"
-                             style="margin-left: 30%;margin-top: 30%;">
+                             style="margin-left: 30%;margin-top: 30%;" alt="White logo">
                     </div>
                 </div>
             </div> <!-- Featured end -->

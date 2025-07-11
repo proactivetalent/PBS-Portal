@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="divider divider-center"><img src="{{ asset('images/others/dividerlogo50.png') }}"
-                                                         width="30px"/></div>
+                                                         width="30px" alt="Divider logo"/></div>
 
                 <div class="table-responsive">
                     <table id="datatable1" class="table table-striped text-white table-bordered" cellspacing="0"

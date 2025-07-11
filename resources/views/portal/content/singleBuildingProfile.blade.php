@@ -106,7 +106,8 @@
                         <div class="card-body">
                             <img id="photo"
                                  src="{{$property->image()}}"
-                                 width="100%">
+                                 width="100%"
+                                 alt="Main building photo for {{$property->getAddressWithoutBin() ?? $property->stname ?? 'Property'}}">
                             <div class="row mt-2">
                                 <div class="col-2">
                                     {!! Form::open(['route' => ['property.photo.delete',$property->id], 'method' => 'post']) !!}
@@ -338,8 +339,7 @@
 
                                         </div>
                                         <div class="col-5 text-center">
-                                            <img id="photo2" style="height: 200px" src="{{$property->image()}}"
-                                                 class="img-circle img-fluid">
+                                            <img id="photo2" style="height: 200px" src="{{$property->image()}}" alt="Building photo for {{$property->getAddressWithoutBin() ?? $property->stname ?? 'Property'}}" class="img-circle img-fluid">
                                         </div>
                                     </div>
 
