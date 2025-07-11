@@ -43,14 +43,14 @@
     {!! Form::open(['route' => ['lists.subscribers.bulkadd',$list->id],'method'=>'POST','class'=>'col-12']) !!}
     <div class="card">
         <div class="card-header">
-            <div class="card-title">
+            <header class="card-title">
                 All emails should write in seperate line, each line must contain E-Mail, First Name and Last Name
                 respectively and these should be seperated with ;
                 (semicolon). </br>
                 Ex.</br>
                 <b>info@pbs.nyc;Jon;Credendino</b>
                 </i>
-            </div>
+            </header>
             <div class="card-tools">
                 <div class="form-group">
                     {!! Form::submit('Add All', ['class' => 'form-control btn btn-success btn-lg btn-block']) !!}

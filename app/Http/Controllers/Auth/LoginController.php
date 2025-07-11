@@ -157,6 +157,6 @@ class LoginController extends Controller
             return $response;
         }
 
-        return redirect('http://localhost:8000/portal/login');
+        return redirect(config('app.url') . '/portal/login');
     }
 }

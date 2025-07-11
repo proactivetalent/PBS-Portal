@@ -49,7 +49,7 @@
    <div class="login-wrapper">
     <div class="login-container login-container-bg">
         <img src="{{ asset('pics/LOGO.png') }}" alt="PBS NYC Logo" class="login-logo" onerror="this.onerror=null; this.style.display='none'; this.parentNode.insertBefore(document.createTextNode('PBS NYC'), this);">
-        <p class="login-heading">LOGIN</p>
+        <h1 class="login-heading">LOGIN</h1>
         
         <form action="{{ $login_url }}" method="post" class="login-form">
             {{ csrf_field() }}

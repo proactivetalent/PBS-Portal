@@ -284,7 +284,7 @@
                         <div class="container clearfix">
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="heading-block center">
+                                    <section class="heading-block center">
                                         <h3 style="font-family: 'Conthrax', sans-serif !important; color: #DCE2E2; font-size: 2.5rem;">SUBSCRIPTION</h3>
                                     </div>
                                 </div>
@@ -304,7 +304,7 @@
                                                  src="{{asset('images/others/bronze.png')}}" alt="Bronze">
                                         </div>
                                         <div class="team-desc p-0 col-12">
-                                            <div class="team-title"><h4> Bronze </h4><h6>Alert Subscription</h6>
+                                            <header class="team-title"><h4> Bronze </h4><h6>Alert Subscription</h6>
                                                 <i
                                                         class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                         class="fas fa-star"></i><i
@@ -523,7 +523,7 @@
                                                  src="{{asset('images/others/gold.png')}}" alt="Gold">
                                         </div>
                                         <div class="team-desc p-0 col-12">
-                                            <div class="team-title"><h4> GOLD </h4><h6>Member Subscription</h6>
+                                            <header class="team-title"><h4> GOLD </h4><h6>Member Subscription</h6>
                                                 <i
                                                         class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                         class="fas fa-star"></i><i class="fas fa fa-star"></i><i
@@ -625,11 +625,11 @@
                                 <span class='payment-errors'></span>
                                 <div>
                                     <div class="col-12">
-                                        <div class="heading-block center">
+                                        <section class="heading-block center">
                                             <h4>Please submit the form below to finalize your subscription.</h4>
                                             <i>Note: your card will not be charged until the three month trial is over.</i>
                                         </div>
-                                    </div>
+                                    </section>
 
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label" for="card-holder-name">Name on
@@ -637,7 +637,7 @@
                                         <div class="col-sm-12">
                                             <input required type="text" class="inpot form-control" stripe-data="name"
                                                    id="card-holder-name" placeholder="Card Holder's Name">
-                                        </div>
+                                        </section>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label" for="card-number">Card

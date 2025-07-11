@@ -16,9 +16,9 @@
     <div class="page-content container-fluid">
         <div class="card">
             <div class="card-header">
-                <div class="card-title col-12 col-md-8  my-1 text-center text-md-left">
+                <header class="card-title col-12 col-md-8  my-1 text-center text-md-left">
                     All Subscribers in "{{$list->name}}"
-                </div>
+                </header>
                 <div class="card-tools mx-0 col-12 col-md-4">
                     <div class="row">
                         <div class="col-12 col-md-4 my-1">

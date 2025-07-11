@@ -20,7 +20,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title"><h3>All Settings</h3></div>
+                        <header class="card-title"><h3>All Settings</h3></header>
                         <div class="card-tools">   @if(Auth::user()->hasRole('developer'))
                                 <a href="{{route('settings.create')}}" class="btn btn-lg btn-block" style="background-color: #8AD5B7 !important; border-color: #8AD5B7 !important; color: #1E2322 !important; font-weight: 500 !important;">Create New Setting</a>
                             @endif</div>
