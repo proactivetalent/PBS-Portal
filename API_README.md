@@ -17,6 +17,28 @@ Tracking of Form Submissions,
 Tracking of Resources Downloads
 Google Analytics
 
+<VirtualHost *:80>
+    ServerName pbs.nyc
+    ServerAlias www.pbs.nyc
+    DocumentRoot /var/www/pbsnyc/public
+
+    <Directory /var/www/pbsnyc/public>
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/pbsnyc_error.log
+    CustomLog ${APACHE_LOG_DIR}/pbsnyc_access.log combined
+
+    # Redirect HTTP to HTTPS for pbs.nyc and www.pbs.nyc
+    RewriteEngine on
+    RewriteCond %{SERVER_NAME} =pbs.nyc [OR]
+    RewriteCond %{SERVER_NAME} =www.pbs.nyc
+    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent] 
+</VirtualHost>
+
+
+
 ----------app/Providers/AppServiceProvider.php(for https)---------
 
 # PBS NYC API Documentation
@@ -30,15 +52,9 @@ All authenticated routes require a JWT token in the Authorization header.
 | POST | `/api/user/register` | Register new user |
 | POST | `/api/user/login` | Login user |
 | GET | `/api/user/logout` | Logout user |
-| GET | `/api/user` | Get current user details |
-| POST | `/api/user/update` | Update user profile |
-| GET | `/api/user/properties` | Get user's properties |
 
 ## Property Search Endpoints (No Authentication Required)
- 
-### Search Property by Address
 **POST** `/api/search-property`
-
 Search for properties by borough, house number, and street name.
 
 **Request Body:**

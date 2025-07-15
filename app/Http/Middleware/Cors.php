@@ -20,6 +20,8 @@ class Cors
             'http://localhost:3000',
             'https://pbs-compliance-solutions-txdp.vercel.app',
             'https://pbs-frontend-three.vercel.app',
+            'https://pbs.nyc',
+            'https://www.pbs.nyc',
             $request->getSchemeAndHttpHost()
         ];
 

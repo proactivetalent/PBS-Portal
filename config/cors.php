@@ -23,9 +23,9 @@ return [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
         'https://github.com/saidlv/pbs.nyc',
-        'https://pbs-compliance-solutions-txdp.vercel.app',
-        'http://pbsnyc.srv899233.hstgr.cloud',
-        'https://pbsnyc.srv899233.hstgr.cloud',
+        'https://pbs-frontend-three.vercel.app',
+        'https://pbs.nyc',
+        'https://www.pbs.nyc',
     ],
 
     'allowed_origins_patterns' => [],

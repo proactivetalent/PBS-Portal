@@ -42,7 +42,7 @@
 <body>
     <!-- Navigation bar with logo -->
     <div class="nav-strip">
-        <a href="https://pbs-frontend-three.vercel.app/">
+        <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/">
             <img src="{{ asset('pics/LOGO.png') }}" alt="PBS NYC Logo" class="nav-logo" onerror="this.onerror=null; this.style.display='none'; this.parentNode.insertBefore(document.createTextNode('PBS NYC'), this);">
         </a>
     </div>

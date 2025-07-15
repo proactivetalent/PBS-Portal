@@ -157,6 +157,7 @@ class LoginController extends Controller
             return $response;
         }
 
-        return redirect(config('app.url') . '/portal/login');
+        $frontendUrl = env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc');
+        return redirect($frontendUrl);
     }
 }
