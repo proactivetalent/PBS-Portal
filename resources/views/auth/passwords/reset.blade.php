@@ -100,23 +100,23 @@
                             <ul class="footer-menu-list">
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/about-us" class="footer-menu-link">About Us</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/about-us" class="footer-menu-link">About Us</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/contacts" class="footer-menu-link">Contact Us</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/contacts" class="footer-menu-link">Contact Us</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/faqs" class="footer-menu-link">FAQs</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/faqs" class="footer-menu-link">FAQs</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/terms-of-service" class="footer-menu-link">Terms of Service</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/terms-of-service" class="footer-menu-link">Terms of Service</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/privacy-policy" class="footer-menu-link">Privacy Policy</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/privacy-policy" class="footer-menu-link">Privacy Policy</a>
                                 </li>
                             </ul>
                         </div>
@@ -126,19 +126,19 @@
                             <ul class="footer-menu-list">
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/press" class="footer-menu-link">Press</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/press" class="footer-menu-link">Press</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/blog" class="footer-menu-link">Blog</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/blog" class="footer-menu-link">Blog</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/law/local-law" class="footer-menu-link">Local Law guide</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/law/local-law" class="footer-menu-link">Local Law guide</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/alert" class="footer-menu-link">Alert System guide</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/alert" class="footer-menu-link">Alert System guide</a>
                                 </li>
                             </ul>
                         </div>
@@ -148,23 +148,23 @@
                             <ul class="footer-menu-list">
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/property-management" class="footer-menu-link">Property Management</a>
+                                <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/property-management" class="footer-menu-link">Property Management</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/owner-representative" class="footer-menu-link">Owner Representative</a>
+                                    <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/owner-representative" class="footer-menu-link">Owner Representative</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/inspection-services" class="footer-menu-link">Inspection Services</a>
+                                    <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/inspection-services" class="footer-menu-link">Inspection Services</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/expediting-services" class="footer-menu-link">Expediting Services</a>
+                                    <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/expediting-services" class="footer-menu-link">Expediting Services</a>
                                 </li>
                                 <li class="footer-menu-item">
                                     <span class="footer-dot-icon"></span>
-                                    <a href="https://pbs-frontend-three.vercel.app/alert" class="footer-menu-link">Alert Service</a>
+                                    <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/alert" class="footer-menu-link">Alert Service</a>
                                 </li>
                             </ul>
                         </div>
@@ -202,13 +202,13 @@
                     
                     <!-- Privacy Links -->
                     <div class="footer-links">
-                        <a href="https://pbs-frontend-three.vercel.app/privacy-policy" class="footer-link" aria-label="View Privacy Policy">
+                        <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/" class="footer-link" aria-label="View Privacy Policy">
                             Privacy Policy
                         </a>
-                        <a href="https://pbs-frontend-three.vercel.app/terms-of-service" class="footer-link" aria-label="View Terms of Service">
+                        <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/" class="footer-link" aria-label="View Terms of Service">
                             Terms of Service
                         </a>
-                        <a href="https://pbs-frontend-three.vercel.app/cookie-policy" class="footer-link" aria-label="View Cookie Policy">
+                        <a href="{{ env('NEXTJS_FRONTEND_URL', 'https://pbs.nyc') }}/" class="footer-link" aria-label="View Cookie Policy">
                             Cookie Policy
                         </a>
                     </div>
