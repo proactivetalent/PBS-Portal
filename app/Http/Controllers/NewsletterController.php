@@ -13,11 +13,14 @@ class NewsletterController extends Controller
     //
     public function index(Request $request)
     {
-        $mailchimp = Helper::getMailChimpInstance();
-        $campaigns = $mailchimp->campaigns->list()->campaigns;
-//        dd($campaigns);
+        try {
+            $mailchimp = Helper::getMailChimpInstance();
+            $campaigns = $mailchimp->campaigns->list()->campaigns;
+        } catch (\Exception $e) {
+            Session::flash('error', 'Failed to connect to Mailchimp: ' . $e->getMessage());
+            $campaigns = [];
+        }
         return view('portal.newsletter.campaigns.index')->withCampaigns($campaigns);
-
     }
 
     public function create()

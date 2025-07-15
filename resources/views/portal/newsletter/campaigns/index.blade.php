@@ -3,10 +3,16 @@
 @section('title', 'PBS Portal | Newsletter Campaigns')
 @section('meta_description', 'Manage and view newsletter campaigns for property management communications in the PBS Portal.')
 
+
 @section('content_header')
     @if (Session::has('success'))
         <div class="alert alert-success" role="alert">
             <strong>Success:</strong> {!! Session::get('success') !!}
+        </div>
+    @endif
+    @if (Session::has('error'))
+        <div class="alert alert-danger" role="alert">
+            <strong>Error:</strong> {!! Session::get('error') !!}
         </div>
     @endif
 @stop
