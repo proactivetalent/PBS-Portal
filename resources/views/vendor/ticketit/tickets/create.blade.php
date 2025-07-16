@@ -1,4 +1,8 @@
 @extends('ticketit::layouts.master')
+@section('css')
+    @parent
+    <link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
+@endsection
 @section('page', 'Create Ticket')
 @section('page_title', 'Create New Ticket')
 
@@ -40,13 +44,13 @@
             <div class="form-group col-lg-4 row">
                 {!! CollectiveForm::label('priority', 'Priority:', ['class' => 'col-lg-6 col-form-label']) !!}
                 <div class="col-lg-6">
-                    {!! CollectiveForm::select('priority_id', $priorities, null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! CollectiveForm::select('priority_id', $priorities, null, ['class' => 'no-padding-select', 'required' => 'required']) !!}
                 </div>
             </div>
             <div class="form-group offset-lg-1 col-lg-4 row">
                 {!! CollectiveForm::label('category', 'Category:', ['class' => 'col-lg-6 col-form-label']) !!}
                 <div class="col-lg-6">
-                    {!! CollectiveForm::select('category_id', $categories, null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! CollectiveForm::select('category_id', $categories, null, ['class' => 'no-padding-select', 'required' => 'required']) !!}
                 </div>
             </div>
             {!! CollectiveForm::hidden('agent_id', 'auto') !!}

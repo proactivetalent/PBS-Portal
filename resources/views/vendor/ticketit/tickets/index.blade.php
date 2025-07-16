@@ -101,54 +101,5 @@
 @stop
 
 @section('js')
-    <script>
-        $(document).ready(function() {
-            $('.table').DataTable({
-                processing: false,
-                serverSide: false,
-                responsive: true,
-                pageLength: {{ $setting->paginate_items ?? 25 }},
-                lengthMenu: {!! json_encode($setting->length_menu ?? [10, 25, 50, 100]) !!},                ajax: '{!! route(($setting->main_route ?? 'tickets').'.data', $complete ?? 0) !!}',
-                @if( $u && ($u->isAgent() || $u->isAdmin()) )
-                order: [[5, "desc"]],
-                @else
-                order: [[3, "desc"]],
-                @endif                language: {
-                    decimal: "",
-                    emptyTable: "No data available in table",
-                    info: "Showing _START_ to _END_ of _TOTAL_ entries",
-                    infoEmpty: "Showing 0 to 0 of 0 entries",
-                    infoFiltered: "(filtered from _MAX_ total entries)",
-                    infoPostFix: "",
-                    thousands: ",",
-                    lengthMenu: "Show _MENU_ entries",
-                    loadingRecords: "Loading...",
-                    processing: "Processing...",
-                    search: "Search:",
-                    zeroRecords: "No matching records found",
-                    paginate: {
-                        first: "First",
-                        last: "Last",
-                        next: "Next",
-                        previous: "Previous"
-                    },
-                    aria: {
-                        sortAscending: ": activate to sort column ascending",
-                        sortDescending: ": activate to sort column descending"
-                    },
-                },
-                columns: [
-                    {data: 'id', name: 'ticketit.id'},
-                    {data: 'subject', name: 'subject'},
-                    {data: 'status', name: 'ticketit_statuses.name'},                    {data: 'updated_at', name: 'ticketit.updated_at'},
-                    {data: 'agent', name: 'users.name'},
-                    @if( $u && ($u->isAgent() || $u->isAdmin()) )
-                    {data: 'priority', name: 'ticketit_priorities.name'},
-                    {data: 'owner', name: 'users.name'},
-                    {data: 'category', name: 'ticketit_categories.name'}
-                    @endif
-                ]
-            });
-        });
-    </script>
+    {{-- No JS needed for static table --}}
 @append

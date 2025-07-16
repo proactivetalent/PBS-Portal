@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
 {!! CollectiveForm::open(['method' => 'POST', 'route' => $setting->grab('main_route').'-comment.store', 'class' => '']) !!}
 
 

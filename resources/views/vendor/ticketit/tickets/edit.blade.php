@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
 <div class="modal fade" id="ticket-edit-modal" tabindex="-1" role="dialog" aria-labelledby="ticket-edit-modal-Label">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

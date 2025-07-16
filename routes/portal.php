@@ -431,7 +431,7 @@ Route::group(['middleware' => ['auth']], function () {
         ->name("tickets.data");
 
     $field_name = last(explode('/', 'tickets'));
-    Route::resource('tickets', '\Kordy\Ticketit\Controllers\TicketsController', [
+    Route::resource('tickets', 'App\\Http\\Controllers\\TicketController', [
         'names' => [
             'index' => 'tickets.index',
             'store' => 'tickets.store',

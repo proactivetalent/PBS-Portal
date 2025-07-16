@@ -1,0 +1,242 @@
+/* --- Summernote Font Family Dropdown Fixes (scoped) --- */
+.note-editor .note-fontname .dropdown-menu, .note-editor .note-fontname .note-dropdown-menu {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-width: 180px !important;
+    width: 220px !important;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 3100 !important;
+}
+.note-editor .note-fontname .dropdown-item {
+    color: #222 !important;
+    background: #fff !important;
+    font-size: 1rem !important;
+    white-space: normal !important;
+    min-width: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    position: relative;
+    padding-left: 0.8em !important; /* Only enough for checkmark */
+}
+.note-editor .note-fontname .dropdown-item .note-check {
+    position: static;
+    color: #007bff !important;
+    font-weight: bold;
+    margin-right: 0.5em;
+    min-width: 1.2em;
+}
+.note-editor .note-fontname .dropdown-item span,
+.note-editor .note-fontname .dropdown-item:not(:empty):not(:has(.note-check)):not(:has(span)) {
+    display: inline-block;
+    margin-left: 0.2em;
+    font-family: inherit !important;
+    color: #222 !important;
+    vertical-align: middle;
+    white-space: normal !important;
+}
+.note-editor .note-fontname .dropdown-item {
+    /* fallback: show all text nodes after checkmark */
+    display: flex !important;
+    align-items: center !important;
+}
+ .note-editor .note-fontname .dropdown-item.active, .note-editor .note-fontname .dropdown-item:active, .note-editor .note-fontname .dropdown-item:hover {
+    background: #f0f0f0 !important;
+    color: #111 !important;
+}
+ .note-editor .note-fontname .dropdown-item .note-check {
+    color: #007bff !important;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+
+/* Use this class on selects to remove padding and keep Bootstrap-like appearance */
+.no-padding-select {
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0 3px !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  box-shadow: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='4 6 8 10 12 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5em !important;
+}
+.no-padding-select:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Prevent dropdown value text from being cut off */
+ .note-editor .dropdown-toggle {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: initial !important;
+}
+
+/* Fix bottom dropdown value text cut-off */
+ .note-editor .note-dropdown-menu, .note-editor .dropdown-menu {
+    min-width: 180px !important;
+    width: 220px !important;
+    box-sizing: border-box !important;
+}
+
+
+/* Ensure image/video selector modals are clickable and above overlays */
+.note-modal, .note-modal .modal-dialog, .note-editor .modal, .note-editor .modal-dialog {
+    z-index: 4000 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.note-modal-backdrop, .note-editor .modal-backdrop {
+    z-index: 3999 !important;
+    pointer-events: auto !important;
+    background: rgba(0,0,0,0.4) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+/* --- Summernote Style Dropdown Fixes --- */
+/* --- Summernote Style Dropdown Fixes (cleaned) --- */
+.note-editor .note-style .dropdown-menu, .note-editor .note-style .note-dropdown-menu {
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    min-width: 180px !important;
+    width: 220px !important;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.note-editor .note-style .dropdown-item {
+    color: #222 !important;
+    background: #fff !important;
+    font-size: 1rem !important;
+    white-space: normal !important;
+}
+.note-editor .note-style .dropdown-item.active, .note-editor .note-style .dropdown-item:active, .note-editor .note-style .dropdown-item:hover {
+    background: #f0f0f0 !important;
+    color: #111 !important;
+}
+.note-editor .note-style .dropdown-item .note-check {
+    color: #007bff !important;
+    font-weight: bold;
+    margin-right: 6px;
+}
+/* Fix Summernote and Bootstrap dropdowns: add scrollbars, set max-height, and improve option visibility */
+ .note-editor .note-dropdown-menu, .note-editor .dropdown-menu {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1060 !important;
+}
+
+/* Improve font color and checkmark visibility in dropdowns */
+ .note-editor .note-dropdown-menu .dropdown-item, .note-editor .dropdown-menu .dropdown-item, .note-editor .note-dropdown-menu .note-check, .note-editor .dropdown-menu .note-check {
+    color: #222 !important;
+    background: #fff !important;
+}
+ .note-editor .note-dropdown-menu .dropdown-item.active, .note-editor .dropdown-menu .dropdown-item.active, .note-editor .note-dropdown-menu .dropdown-item:active, .note-editor .dropdown-menu .dropdown-item:active {
+    background: #f0f0f0 !important;
+    color: #111 !important;
+}
+ .note-editor .note-dropdown-menu .note-check, .note-editor .dropdown-menu .note-check {
+    color: #007bff !important;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+/* Fix style dropdown font color */
+ .note-editor .note-style .dropdown-item, .note-editor .note-style .dropdown-item * {
+    color: #222 !important;
+}
+
+/* Prevent dropdowns from being cut off */
+ .note-editor .dropdown-menu {
+    min-width: 180px;
+    width: auto;
+}
+/* Custom Summernote UI fixes for PBS Portal */
+
+/* Fix dropdown and modal z-index and visibility */
+ .note-modal, .note-modal .modal-dialog {
+  z-index: 3000 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+ .note-modal-backdrop {
+  z-index: 2999 !important;
+  pointer-events: auto !important;
+  background: rgba(0,0,0,0.4) !important;
+  visibility: visible !important;
+}
+
+ .note-editor .note-popover .popover-content .note-dropdown-menu,
+ .note-editor .note-toolbar .note-dropdown-menu {
+  z-index: 3100 !important;
+  color: #222 !important;
+  background: #fff !important;
+  min-width: 180px !important;
+  max-width: 400px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+ .note-editor .note-toolbar .note-dropdown-menu .dropdown-item,
+ .note-editor .note-popover .popover-content .note-dropdown-menu .dropdown-item {
+  color: #222 !important;
+  background: #fff !important;
+  white-space: normal !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+ .note-editor .note-toolbar .note-dropdown-menu .dropdown-item:active,
+ .note-editor .note-toolbar .note-dropdown-menu .dropdown-item:hover,
+ .note-editor .note-popover .popover-content .note-dropdown-menu .dropdown-item:active,
+ .note-editor .note-popover .popover-content .note-dropdown-menu .dropdown-item:hover {
+  color: #222 !important;
+  background: #e9ecef !important;
+}
+
+ .note-editor .note-dropdown-menu {
+  overflow: visible !important;
+  max-height: 400px !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+ .note-editor .note-dropdown-menu * {
+  color: #222 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+/* Prevent modals from being hidden when focus is lost */
+ .note-modal[aria-hidden="true"],
+ .note-modal[style*="display: none"] {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}

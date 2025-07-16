@@ -14,7 +14,18 @@ use Kordy\Ticketit\Models\Ticket;
 
 class TicketController extends Controller
 {
-    //
+    // Show all tickets for the current user
+    public function index()
+    {
+        $user = auth()->user();
+        // Fetch all tickets for the user and join status table for status name
+        $tickets = \DB::table('ticketit')
+            ->leftJoin('ticketit_statuses', 'ticketit.status_id', '=', 'ticketit_statuses.id')
+            ->where('ticketit.user_id', $user->id)
+            ->select('ticketit.*', 'ticketit_statuses.name as status_name')
+            ->get();
+        return view('ticketit::tickets.index', compact('tickets', 'user'));
+    }
 
     public function create()
     {
@@ -47,5 +58,4 @@ class TicketController extends Controller
             return [$priorities->lists('name', 'id'), $categories->lists('name', 'id'), $statuses->lists('name', 'id')];
         }
     }
-
 }

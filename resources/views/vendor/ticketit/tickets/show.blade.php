@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
 @extends('ticketit::layouts.master')
 @section('page', trans('ticketit::lang.show-ticket-title') . trans('ticketit::lang.colon') . $ticket->subject)
 @section('page_title', $ticket->subject)
