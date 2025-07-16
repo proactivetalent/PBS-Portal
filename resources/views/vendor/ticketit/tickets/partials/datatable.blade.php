@@ -29,9 +29,9 @@
                 <td>{{ $ticket->updated_at }}</td>
                 <td>{{ $ticket->agent_id ?? '' }}</td>
                 @if($u && ($u->isAgent() || $u->isAdmin()))
-                    <td>{{ $ticket->priority->name ?? '' }}</td>
-                    <td>{{ $ticket->owner->name ?? '' }}</td>
-                    <td>{{ $ticket->category->name ?? '' }}</td>
+                    <td>{{ $ticket->priority_name ?? '' }}</td>
+                    <td>{{ $ticket->owner_name ?? '' }}</td>
+                    <td>{{ $ticket->category_name ?? '' }}</td>
                 @endif
             </tr>
         @empty

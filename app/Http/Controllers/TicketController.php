@@ -14,15 +14,54 @@ use Kordy\Ticketit\Models\Ticket;
 
 class TicketController extends Controller
 {
+    // Store a new ticket
+    public function store(Request $request)
+    {
+        $request->validate([
+            'subject' => 'required|string|max:255',
+            'content' => 'required|string',
+            'category_id' => 'required|exists:ticketit_categories,id',
+            'priority_id' => 'required|exists:ticketit_priorities,id',
+        ]);
+
+        $ticket = new Ticket();
+        $ticket->subject = $request->input('subject');
+        // Save plain text in content, HTML in html column
+        $htmlContent = $request->input('content');
+        $plainText = strip_tags($htmlContent);
+        $ticket->content = $plainText;
+        $ticket->html = $htmlContent;
+        $ticket->category_id = $request->input('category_id');
+        $ticket->priority_id = $request->input('priority_id');
+        $ticket->user_id = auth()->id();
+        $ticket->status_id = 1; // Default to 'Open' or first status
+        // Assign the first available agent as default
+        $firstAgent = Agent::first();
+        $ticket->agent_id = $firstAgent ? $firstAgent->id : 1; // fallback to 1 if no agent found
+        $ticket->save();
+
+        return redirect()->route('tickets.index')->with('status', 'Ticket created successfully!');
+    }
+
+    // ...existing code...
     // Show all tickets for the current user
     public function index()
     {
         $user = auth()->user();
-        // Fetch all tickets for the user and join status table for status name
+        // Fetch all tickets for the user and join related tables for display fields
         $tickets = \DB::table('ticketit')
             ->leftJoin('ticketit_statuses', 'ticketit.status_id', '=', 'ticketit_statuses.id')
+            ->leftJoin('ticketit_priorities', 'ticketit.priority_id', '=', 'ticketit_priorities.id')
+            ->leftJoin('users', 'ticketit.user_id', '=', 'users.id')
+            ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id')
             ->where('ticketit.user_id', $user->id)
-            ->select('ticketit.*', 'ticketit_statuses.name as status_name')
+            ->select(
+                'ticketit.*',
+                'ticketit_statuses.name as status_name',
+                'ticketit_priorities.name as priority_name',
+                'users.name as owner_name',
+                'ticketit_categories.name as category_name'
+            )
             ->get();
         return view('ticketit::tickets.index', compact('tickets', 'user'));
     }
