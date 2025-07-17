@@ -3,15 +3,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">{{ trans('ticketit::lang.show-ticket-modal-delete-title') }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">{{ trans('ticketit::lang.flash-x') }}</button>
+        <h5 class="modal-title">Delete Ticket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body">
-        <p>{{ trans('ticketit::lang.show-ticket-modal-delete-message') }}</p>
+        <p>Are you sure you want to delete this ticket?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('ticketit::lang.btn-cancel') }}</button>
-        <button type="button" class="btn btn-danger" id="confirm">{{ trans('ticketit::lang.btn-delete') }}</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirm">Delete</button>
       </div>
     </div>
   </div>

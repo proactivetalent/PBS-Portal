@@ -1,62 +1,18 @@
-<link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
 @extends('ticketit::layouts.master')
-@section('page', trans('ticketit::lang.show-ticket-title') . trans('ticketit::lang.colon') . $ticket->subject)
-@section('page_title', $ticket->subject)
 
-@section('ticketit_header')
-<div>
-    @if(! $ticket->completed_at && $close_perm == 'yes')
-            {!! link_to_route($setting->grab('main_route').'.complete', trans('ticketit::lang.btn-mark-complete'), $ticket->id,
-                                ['class' => 'btn btn-success']) !!}
-    @elseif($ticket->completed_at && $reopen_perm == 'yes')
-            {!! link_to_route($setting->grab('main_route').'.reopen', trans('ticketit::lang.reopen-ticket'), $ticket->id,
-                                ['class' => 'btn btn-success']) !!}
-    @endif
-    @if($u->isAgent() || $u->isAdmin())
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ticket-edit-modal">
-            {{ trans('ticketit::lang.btn-edit')  }}
-        </button>
-    @endif
-    @if($u->isAdmin())
-        @if($setting->grab('delete_modal_type') == 'builtin')
-            {!! link_to_route(
-                            $setting->grab('main_route').'.destroy', trans('ticketit::lang.btn-delete'), $ticket->id,
-                            [
-                            'class' => 'btn btn-danger deleteit',
-                            'form' => "delete-ticket-$ticket->id",
-                            "node" => $ticket->subject
-                            ])
-            !!}
-        @elseif($setting->grab('delete_modal_type') == 'modal')
-{{-- // OR; Modal Window: 1/2 --}}
-            {!! CollectiveForm::open(array(
-                    'route' => array($setting->grab('main_route').'.destroy', $ticket->id),
-                    'method' => 'delete',
-                    'style' => 'display:inline'
-               ))
-            !!}
-            <button type="button"
-                    class="btn btn-danger"
-                    data-toggle="modal"
-                    data-target="#confirmDelete"
-                    data-title="{!! trans('ticketit::lang.show-ticket-modal-delete-title', ['id' => $ticket->id]) !!}"
-                    data-message="{!! trans('ticketit::lang.show-ticket-modal-delete-message', ['subject' => $ticket->subject]) !!}"
-             >
-              {{ trans('ticketit::lang.btn-delete') }}
-            </button>
-        @endif
-            {!! CollectiveForm::close() !!}
-{{-- // END Modal Window: 1/2 --}}
-    @endif
-</div>
-@stop
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
+@endsection
+
+
 
 @section('ticketit_content')
     @include('ticketit::tickets.partials.ticket_body')
 @endsection
 
+
 @section('ticketit_extra_content')
-    <h2 class="mt-5">{{ trans('ticketit::lang.comments') }}</h2>
+    <h2 class="mt-5">Comments</h2>
     @include('ticketit::tickets.partials.comments')
     {{-- pagination --}}
     {!! $comments->render("pagination::bootstrap-4") !!}
@@ -66,9 +22,42 @@
 @section('js')
     <script>
         $(document).ready(function() {
-            $( ".deleteit" ).click(function( event ) {
-                event.preventDefault();
-                if (confirm("{!! trans('ticketit::lang.show-ticket-js-delete') !!}" + $(this).attr("node") + " ?"))
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
+    <style>
+        #ticket-edit-modal .modal-dialog {
+            max-width: 900px;
+            margin: 4.5rem auto 2rem auto;
+        }
+        #ticket-edit-modal .modal-content {
+            padding: 20px 10px 10px 10px;
+            border-radius: 8px;
+        }
+        #ticket-edit-modal .modal-header {
+            border-bottom: 1px solid #e5e5e5;
+        }
+        #ticket-edit-modal .modal-footer {
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        #ticket-edit-modal .modal-body {
+            overflow-x: auto;
+        }
+        #ticket-edit-modal .note-editor,
+        #ticket-edit-modal .note-editor .note-toolbar,
+        #ticket-edit-modal .note-editor .note-toolbar .note-btn-group {
+            width: 100% !important;
+            min-width: 0;
+            box-sizing: border-box;
+        }
+        #ticket-edit-modal .note-toolbar {
+            background: #6ea665 !important;
+            border-radius: 6px 6px 0 0;
+        }
+    </style>
+@endsection
                 {
                     var form = $(this).attr("form");
                     $("#" + form).submit();
@@ -76,7 +65,7 @@
 
             });
             $('#category_id').change(function(){
-                var loadpage = "{!! route($setting->grab('main_route').'agentselectlist') !!}/" + $(this).val() + "/{{ $ticket->id }}";
+                var loadpage = "{!! route(\Kordy\Ticketit\Models\Setting::grab('main_route').'agentselectlist') !!}/" + $(this).val() + "/{{ $ticket->id }}";
                 $('#agent_id').load(loadpage);
             });
             $('#confirmDelete').on('show.bs.modal', function (e) {
@@ -90,7 +79,7 @@
                 $(this).find('.modal-footer #confirm').data('form', form);
             });
 
-            <!-- Form confirm (yes/ok) handler, submits form -->
+            // Form confirm (yes/ok) handler, submits form
             $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
                 $(this).data('form').submit();
             });
@@ -98,3 +87,6 @@
     </script>
     @include('ticketit::tickets.partials.summernote')
 @append
+
+{{-- Always include the edit modal at the end of the page so it is present in the DOM --}}
+

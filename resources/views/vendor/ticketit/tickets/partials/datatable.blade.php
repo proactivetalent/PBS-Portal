@@ -24,7 +24,11 @@
         @forelse($tickets as $ticket)
             <tr>
                 <td>{{ $ticket->id }}</td>
-                <td>{{ $ticket->subject }}</td>
+                <td>
+                    <a href="{{ route(\Kordy\Ticketit\Models\Setting::grab('main_route').'.show', $ticket->id) }}">
+                        {{ $ticket->subject }}
+                    </a>
+                </td>
                 <td>{{ $ticket->status_name ?? '' }}</td>
                 <td>{{ $ticket->updated_at }}</td>
                 <td>{{ $ticket->agent_id ?? '' }}</td>

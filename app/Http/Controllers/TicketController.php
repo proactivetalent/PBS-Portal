@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Kordy\Ticketit\Helpers\LaravelVersion;
 use Cache;
@@ -14,6 +12,28 @@ use Kordy\Ticketit\Models\Ticket;
 
 class TicketController extends Controller
 {
+    // Show all completed tickets for the current user
+    public function indexComplete()
+    {
+        $user = auth()->user();
+        // Fetch only completed tickets for the user
+        $tickets = \DB::table('ticketit')
+            ->leftJoin('ticketit_statuses', 'ticketit.status_id', '=', 'ticketit_statuses.id')
+            ->leftJoin('ticketit_priorities', 'ticketit.priority_id', '=', 'ticketit_priorities.id')
+            ->leftJoin('users', 'ticketit.user_id', '=', 'users.id')
+            ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id')
+            ->where('ticketit.user_id', $user->id)
+            ->whereNotNull('ticketit.completed_at')
+            ->select(
+                'ticketit.*',
+                'ticketit_statuses.name as status_name',
+                'ticketit_priorities.name as priority_name',
+                'users.name as owner_name',
+                'ticketit_categories.name as category_name'
+            )
+            ->get();
+        return view('ticketit::tickets.index', compact('tickets', 'user'));
+    }
     // Store a new ticket
     public function store(Request $request)
     {
@@ -43,7 +63,6 @@ class TicketController extends Controller
         return redirect()->route('tickets.index')->with('status', 'Ticket created successfully!');
     }
 
-    // ...existing code...
     // Show all tickets for the current user
     public function index()
     {

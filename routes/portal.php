@@ -425,26 +425,23 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Route::group(['middleware' => '', function () use ($main_route) {
     //Ticket public route
-    Route::get("tickets/complete", '\Kordy\Ticketit\Controllers\TicketsController@indexComplete')
+    Route::get("tickets/complete", 'App\\Http\\Controllers\\TicketController@indexComplete')
         ->name("tickets-complete");
     Route::get("tickets/data/{id?}", '\Kordy\Ticketit\Controllers\TicketsController@data')
         ->name("tickets.data");
 
     $field_name = last(explode('/', 'tickets'));
-    Route::resource('tickets', 'App\\Http\\Controllers\\TicketController', [
-        'names' => [
-            'index' => 'tickets.index',
-            'store' => 'tickets.store',
-            'create' => 'tickets.create',
-            'update' => 'tickets.update',
-            'show' => 'tickets.show',
-            'destroy' => 'tickets.destroy',
-            'edit' => 'tickets.edit',
-        ],
-        'parameters' => [
-            'tickets' => 'ticket',
-        ],
-    ]);
+    // Custom controller for index, store, create
+    Route::get('tickets', 'App\\Http\\Controllers\\TicketController@index')->name('tickets.index');
+    Route::post('tickets', 'App\\Http\\Controllers\\TicketController@store')->name('tickets.store');
+    Route::get('tickets/create', 'App\\Http\\Controllers\\TicketController@create')->name('tickets.create');
+
+    // Kordy controller for show, edit, update, destroy
+    Route::get('tickets/{ticket}', '\\Kordy\\Ticketit\\Controllers\\TicketsController@show')->name('tickets.show');
+    Route::get('tickets/{ticket}/edit', '\\Kordy\\Ticketit\\Controllers\\TicketsController@edit')->name('tickets.edit');
+    Route::put('tickets/{ticket}', '\\Kordy\\Ticketit\\Controllers\\TicketsController@update')->name('tickets.update');
+    Route::patch('tickets/{ticket}', '\\Kordy\\Ticketit\\Controllers\\TicketsController@update');
+    Route::delete('tickets/{ticket}', '\\Kordy\\Ticketit\\Controllers\\TicketsController@destroy')->name('tickets.destroy');
 
     //Ticket Comments public route
     $field_name = last(explode('/', "tickets-comment"));

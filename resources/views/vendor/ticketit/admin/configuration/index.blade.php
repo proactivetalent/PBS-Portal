@@ -1,11 +1,11 @@
 @extends('ticketit::layouts.master')
 
-@section('page', trans('ticketit::admin.config-index-title'))
+@section('page', 'Ticketit Configuration')
 
 @section('ticketit_header')
 {!! link_to_route(
-    $setting->grab('admin_route').'.configuration.create',
-    trans('ticketit::admin.btn-create-new-config'), null,
+    \Kordy\Ticketit\Models\Setting::grab('admin_route').'.configuration.create',
+    'Create New Config', null,
     ['class' => 'btn btn-primary'])
 !!}
 @stop
@@ -15,15 +15,15 @@
 @section('ticketit_content')
 <!-- configuration -->
     @if($configurations->isEmpty())
-        <div class="text-center">{{ trans('ticketit::admin.config-index-no-settings') }}</div>
+        <div class="text-center">No configuration settings found.</div>
     @else
         <ul class="nav nav-tabs nav-justified">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#init-configs">{{ trans('ticketit::admin.config-index-initial') }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ticket-configs">{{ trans('ticketit::admin.config-index-tickets') }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email-configs">{{ trans('ticketit::admin.config-index-notifications') }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#perms-configs">{{ trans('ticketit::admin.config-index-permissions') }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#editor-configs">{{ trans('ticketit::admin.config-index-editor') }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#other-configs">{{ trans('ticketit::admin.config-index-other') }}</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#init-configs">Initial</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ticket-configs">Tickets</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email-configs">Notifications</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#perms-configs">Permissions</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#editor-configs">Editor</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#other-configs">Other</a></li>
         </ul>
 
         <div class="tab-content">

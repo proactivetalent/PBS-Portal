@@ -1,3 +1,9 @@
+@php
+    if (!isset($editor_enabled)) $editor_enabled = true;
+    if (!isset($codemirror_enabled)) $codemirror_enabled = false;
+    if (!isset($editor_locale)) $editor_locale = 'en-US';
+    if (!isset($editor_options)) $editor_options = '{}';
+@endphp
 @if($editor_enabled)
 
 @if($codemirror_enabled)
