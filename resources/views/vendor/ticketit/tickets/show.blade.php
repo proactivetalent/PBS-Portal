@@ -4,8 +4,6 @@
     <link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
 @endsection
 
-
-
 @section('ticketit_content')
     @include('ticketit::tickets.partials.ticket_body')
 @endsection
@@ -22,42 +20,6 @@
 @section('js')
     <script>
         $(document).ready(function() {
-@section('css')
-    <link rel="stylesheet" href="{{ asset('css/summernote-overrides.css') }}">
-    <style>
-        #ticket-edit-modal .modal-dialog {
-            max-width: 900px;
-            margin: 4.5rem auto 2rem auto;
-        }
-        #ticket-edit-modal .modal-content {
-            padding: 20px 10px 10px 10px;
-            border-radius: 8px;
-        }
-        #ticket-edit-modal .modal-header {
-            border-bottom: 1px solid #e5e5e5;
-        }
-        #ticket-edit-modal .modal-footer {
-            border-top: 1px solid #e5e5e5;
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-        }
-        #ticket-edit-modal .modal-body {
-            overflow-x: auto;
-        }
-        #ticket-edit-modal .note-editor,
-        #ticket-edit-modal .note-editor .note-toolbar,
-        #ticket-edit-modal .note-editor .note-toolbar .note-btn-group {
-            width: 100% !important;
-            min-width: 0;
-            box-sizing: border-box;
-        }
-        #ticket-edit-modal .note-toolbar {
-            background: #6ea665 !important;
-            border-radius: 6px 6px 0 0;
-        }
-    </style>
-@endsection
                 {
                     var form = $(this).attr("form");
                     $("#" + form).submit();
