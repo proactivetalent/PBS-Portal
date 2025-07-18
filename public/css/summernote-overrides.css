@@ -96,6 +96,11 @@
     min-width: 180px !important;
     width: 220px !important;
     box-sizing: border-box !important;
+    top: 100% !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin-top: 0.25em !important;
+    margin-bottom: 0 !important;
 }
 
 
