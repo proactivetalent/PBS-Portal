@@ -4,15 +4,18 @@
     <title>@yield('title', 'PBS Portal')</title>
     <meta name="description" content="@yield('meta_description', 'PBS Portal for property management, alerts, and more.')">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-54XWJQ7ZSL');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-54XWJQ7ZSL');
+    </script>
 @endsection
 
 @section('css')

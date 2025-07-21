@@ -33,16 +33,14 @@
     <link href="{{ asset('images/favicon.png') }}" rel="icon" sizes="16x16" type="image/png"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RW51TYX51S"></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-54XWJQ7ZSL');
-</script>
+        gtag('config', 'G-54XWJQ7ZSL');
+    </script>
 
     <!-- Stylesheets
     ============================================= -->
