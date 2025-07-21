@@ -17,26 +17,6 @@ Tracking of Form Submissions,
 Tracking of Resources Downloads
 Google Analytics
 
-<VirtualHost *:80>
-    ServerName pbs.nyc
-    ServerAlias www.pbs.nyc
-    DocumentRoot /var/www/pbsnyc/public
-
-    <Directory /var/www/pbsnyc/public>
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/pbsnyc_error.log
-    CustomLog ${APACHE_LOG_DIR}/pbsnyc_access.log combined
-
-    # Redirect HTTP to HTTPS for pbs.nyc and www.pbs.nyc
-    RewriteEngine on
-    RewriteCond %{SERVER_NAME} =pbs.nyc [OR]
-    RewriteCond %{SERVER_NAME} =www.pbs.nyc
-    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent] 
-</VirtualHost>
-
 Step-by-Step: Implementing Analytics (Google Analytics, Search Console, Tag Manager)
 1. Google Tag Manager (Recommended First)
 Tag Manager lets you add and manage all analytics/tracking scripts (including Google Analytics and others) from a single dashboard, without code changes for every new tag.

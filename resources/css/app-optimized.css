@@ -134,6 +134,10 @@
     color: #2c3430 !important;
 }
 
+.form-control{
+    padding: 0rem 0.75rem !important;
+}
+
 .form-control:focus {
     border-color: #38403e;
     box-shadow: 0 0 0 0.2rem rgba(56, 64, 62, 0.25);
