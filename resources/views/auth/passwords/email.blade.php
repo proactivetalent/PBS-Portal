@@ -97,39 +97,5 @@
         @include('auth.loginfooter')
     </div>
     
-    <!-- Scripts -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script>
-    $(document).ready(function() {
-        $('#newsletter-subscribe-form').on('submit', function(e) {
-            e.preventDefault();
-            var $form = $(this);
-            var $result = $('#newsletter-subscribe-result');
-            $result.text('');
-            $.ajax({
-                url: $form.attr('action'),
-                type: 'POST',
-                data: $form.serialize(),
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(data) {
-                    if (data && data.message) {
-                        $result.css('color', '#2ecc40').html(data.message);
-                    } else {
-                        $result.css('color', '#2ecc40').text('Subscribed successfully!');
-                    }
-                },
-                error: function(xhr) {
-                    var msg = 'Subscription failed.';
-                    if (xhr.responseJSON && xhr.responseJSON.message) {
-                        msg = xhr.responseJSON.message;
-                    }
-                    $result.css('color', '#e74c3c').html(msg);
-                }
-            });
-        });
-    });
-    </script>
 </body>
 </html>
