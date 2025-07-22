@@ -32,9 +32,6 @@
 
     <link href="{{ asset('images/favicon.png') }}" rel="icon" sizes="16x16" type="image/png"/>
 
-     <!-- Google Search Console -->
-    <meta name="google-site-verification" content="dvR5os7dG6jR1wupbLOuWznfD1Y2WhpdFiHIHacceuU" />
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-54XWJQ7ZSL"></script>
     <script>
