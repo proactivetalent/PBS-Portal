@@ -13,9 +13,9 @@
                 <span class="badge badge-light ml-1" style="background-color: #6ea665; color: white;">
                      <?php 
                         try {
-                            if ($u && method_exists($u, 'isAdmin') && $u->isAdmin()) {
+                            if ($u && $u->hasRole('admin')) {
                                 echo Kordy\Ticketit\Models\Ticket::active()->count();
-                            } elseif ($u && method_exists($u, 'isAgent') && $u->isAgent()) {
+                            } elseif ($u && $u->hasRole('agent')) {
                                 echo Kordy\Ticketit\Models\Ticket::active()->agentUserTickets($u->id)->count();
                             } elseif ($u) {
                                 echo Kordy\Ticketit\Models\Ticket::userTickets($u->id)->active()->count();
@@ -37,9 +37,9 @@
                 <span class="badge badge-light ml-1" style="background-color: #6ea665; color: white;">
                     <?php 
                         try {
-                            if ($u && method_exists($u, 'isAdmin') && $u->isAdmin()) {
+                            if ($u && $u->hasRole('admin')) {
                                 echo Kordy\Ticketit\Models\Ticket::complete()->count();
-                            } elseif ($u && method_exists($u, 'isAgent') && $u->isAgent()) {
+                            } elseif ($u && $u->hasRole('agent')) {
                                 echo Kordy\Ticketit\Models\Ticket::complete()->agentUserTickets($u->id)->count();
                             } elseif ($u) {
                                 echo Kordy\Ticketit\Models\Ticket::userTickets($u->id)->complete()->count();

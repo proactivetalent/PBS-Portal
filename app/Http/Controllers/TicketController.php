@@ -16,22 +16,30 @@ class TicketController extends Controller
     public function indexComplete()
     {
         $user = auth()->user();
-        // Fetch only completed tickets for the user
-        $tickets = \DB::table('ticketit')
+        $query = \DB::table('ticketit')
             ->leftJoin('ticketit_statuses', 'ticketit.status_id', '=', 'ticketit_statuses.id')
             ->leftJoin('ticketit_priorities', 'ticketit.priority_id', '=', 'ticketit_priorities.id')
             ->leftJoin('users', 'ticketit.user_id', '=', 'users.id')
             ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id')
-            ->where('ticketit.user_id', $user->id)
-            ->whereNotNull('ticketit.completed_at')
-            ->select(
-                'ticketit.*',
-                'ticketit_statuses.name as status_name',
-                'ticketit_priorities.name as priority_name',
-                'users.name as owner_name',
-                'ticketit_categories.name as category_name'
-            )
-            ->get();
+            ->whereNotNull('ticketit.completed_at');
+
+        if ($user->hasRole('admin')) {
+            // Admin: show all completed tickets
+        } elseif ($user->hasRole('agent')) {
+            // Agent: show completed tickets assigned to them
+            $query->where('ticketit.agent_id', $user->id);
+        } else {
+            // Regular user: show own completed tickets only
+            $query->where('ticketit.user_id', $user->id);
+        }
+
+        $tickets = $query->select(
+            'ticketit.*',
+            'ticketit_statuses.name as status_name',
+            'ticketit_priorities.name as priority_name',
+            'users.name as owner_name',
+            'ticketit_categories.name as category_name'
+        )->get();
         return view('ticketit::tickets.index', compact('tickets', 'user'));
     }
     // Store a new ticket
@@ -67,21 +75,32 @@ class TicketController extends Controller
     public function index()
     {
         $user = auth()->user();
-        // Fetch all tickets for the user and join related tables for display fields
-        $tickets = \DB::table('ticketit')
+        $query = \DB::table('ticketit')
             ->leftJoin('ticketit_statuses', 'ticketit.status_id', '=', 'ticketit_statuses.id')
             ->leftJoin('ticketit_priorities', 'ticketit.priority_id', '=', 'ticketit_priorities.id')
             ->leftJoin('users', 'ticketit.user_id', '=', 'users.id')
-            ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id')
-            ->where('ticketit.user_id', $user->id)
-            ->select(
-                'ticketit.*',
-                'ticketit_statuses.name as status_name',
-                'ticketit_priorities.name as priority_name',
-                'users.name as owner_name',
-                'ticketit_categories.name as category_name'
-            )
-            ->get();
+            ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id');
+
+        // If user is both agent and admin, treat as admin
+        if ($user->hasRole('admin')) {
+            // Admin: show all tickets
+            // No additional where clause
+        } elseif ($user->hasRole('agent')) {
+            // Agent: show tickets assigned to them
+            $query->where('ticketit.agent_id', $user->id);
+        } else {
+            // Regular user: show own tickets only
+            $query->where('ticketit.user_id', $user->id);
+        }
+
+        $tickets = $query->select(
+            'ticketit.*',
+            'ticketit_statuses.name as status_name',
+            'ticketit_priorities.name as priority_name',
+            'users.name as owner_name',
+            'ticketit_categories.name as category_name'
+        )->get();
+
         return view('ticketit::tickets.index', compact('tickets', 'user'));
     }
 
