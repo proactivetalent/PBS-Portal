@@ -134,6 +134,9 @@ Route::middleware('auth:api')->post('property/add', 'PropertyApiController@addPr
 // Add an existing property to user (by id)
 Route::middleware('auth:api')->post('add-existing-property-to-user', 'FrontendController@apiAddExistingPropertyToUser');
 
+//endpoint for newsletter subscription
+Route::post('/subscribe', 'FrontendController@subscribeNewsLetter')->name('api.subscribe')->middleware('throttle:10,1');
+
 // Optionally, comment out the new get-properties-of-user route if you want to avoid confusion
 // Route::middleware('auth:api')->get('get-properties-of-user', 'FrontendController@apiGetPropertyList');
 

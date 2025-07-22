@@ -34,12 +34,25 @@ class FrontendController extends Controller
     public function subscribeNewsLetter(Request $request)
     {
         $email = $request->get('widget-subscribe-form-email');
-        Newsletter::subscribe($email);
-
-        if (Newsletter::lastActionSucceeded()) {
-            return '{ "alert": "success", "message": "You have been <strong>successfully</strong> subscribed to our Email List." }';
-        } else {
-            return '{ "alert": "error", "message": "Failed to subscribe"}';
+        // Use the Newsletter facade (make sure it's registered in config/app.php)
+        try {
+            \Newsletter::subscribe($email);
+            if (\Newsletter::lastActionSucceeded()) {
+                return response()->json([
+                    'alert' => 'success',
+                    'message' => 'You have been <strong>successfully</strong> subscribed to our Email List.'
+                ]);
+            } else {
+                return response()->json([
+                    'alert' => 'error',
+                    'message' => 'Failed to subscribe'
+                ], 400);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'alert' => 'error',
+                'message' => 'Subscription error: ' . $e->getMessage()
+            ], 500);
         }
     }
 

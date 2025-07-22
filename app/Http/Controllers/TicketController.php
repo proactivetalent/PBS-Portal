@@ -23,9 +23,9 @@ class TicketController extends Controller
             ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id')
             ->whereNotNull('ticketit.completed_at');
 
-        if ($user->hasRole('admin')) {
+        if ($user->ticketit_admin) {
             // Admin: show all completed tickets
-        } elseif ($user->hasRole('agent')) {
+        } elseif ($user->ticketit_agent) {
             // Agent: show completed tickets assigned to them
             $query->where('ticketit.agent_id', $user->id);
         } else {
@@ -82,10 +82,10 @@ class TicketController extends Controller
             ->leftJoin('ticketit_categories', 'ticketit.category_id', '=', 'ticketit_categories.id');
 
         // If user is both agent and admin, treat as admin
-        if ($user->hasRole('admin')) {
+        if ($user->ticketit_admin) {
             // Admin: show all tickets
             // No additional where clause
-        } elseif ($user->hasRole('agent')) {
+        } elseif ($user->ticketit_agent) {
             // Agent: show tickets assigned to them
             $query->where('ticketit.agent_id', $user->id);
         } else {
