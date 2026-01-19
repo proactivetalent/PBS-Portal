@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'pdf' => [
+/*    'pdf' => [
         'enabled' => true,
         'binary'  => base_path(env('WKHTML_PDF_BINARY', 'vendor/wemersonjanuario/wkhtmltopdf-windows/bin/64bit/wkhtmltopdf.exe')),
         'timeout' => false,
@@ -48,5 +48,23 @@ return [
         'options' => [],
         'env'     => [],
     ],
+*/
+
+'pdf' => [
+    'enabled' => true,
+    'binary'  => env('WKHTML_PDF_BINARY', '/usr/bin/wkhtmltopdf'),
+    'timeout' => 300,
+    'options' => [],
+    'env'     => [],
+],
+
+'image' => [
+    'enabled' => true,
+    'binary'  => env('WKHTML_IMG_BINARY', '/usr/bin/wkhtmltoimage'),
+    'timeout' => 300,
+    'options' => [],
+    'env'     => [],
+],
+
 
 ];

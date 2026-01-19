@@ -50,8 +50,10 @@
                                         <td>{{$item->type}}</td>
                                         <td>{{$item->status}}</td>
                                         <td>{{$item->content}}</td>
-                                        <td>{{$item->due_date->format('Y-m-d')}}</td>
-                                        <td>{{$item->alert_date->format('Y-m-d')}}</td>
+                                     {{--   <td>{{$item->due_date->format('Y-m-d')}}</td> --}}
+                                     {{--   <td>{{$item->alert_date->format('Y-m-d')}}</td> --}}
+					<td>{{ optional($item->due_date)->format('Y-m-d') ?? '-' }}</td>
+					<td>{{ optional($item->alert_date)->format('Y-m-d') ?? '-' }}</td>
                                         <td class="text-center">@if($item->last_alert == null)
                                                 <i style="font-size: 1.2em" class="fas fa-times-circle text-danger"></i>
                                             @else

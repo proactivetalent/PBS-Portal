@@ -6,6 +6,8 @@ use App\User;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
+use Illuminate\Support\Facades\URL; /*newly added line*/
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,9 +32,9 @@ class AppServiceProvider extends ServiceProvider
         Cashier::useCustomerModel(User::class);
 
         // Handle URL scheme based on environment
-        //if (app()->environment('production')) {
-            //URL::forceScheme('https');
-        //}
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
         // Don't force any scheme in development to allow both HTTP and HTTPS
     }
 }

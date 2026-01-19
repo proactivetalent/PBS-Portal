@@ -1,6 +1,6 @@
 <?php
 
-
+use App\user;
 Route::impersonate();
 
 // Authentication Routes
@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // Summary
-    Route::group(['middleware' => ['level:3']], function () {
+/*    Route::group(['middleware' => ['level:3']], function () {
         Route::get('/summary', function () {
             $user = auth()->user();
 
@@ -131,6 +131,75 @@ Route::group(['middleware' => ['auth']], function () {
 //            return $pdf->stream('report.pdf');
         })->name('downloadSummary');
     });
+*/
+//new code change - 07-01-26
+
+
+Route::group(['middleware' => ['level:3']], function () {
+    Route::get('/summary', function () {
+
+        // 🔹 Allow heavy processing
+        set_time_limit(300);
+        ini_set('memory_limit', '512M');
+
+        $user = auth()->user();
+
+        $fileName = $user->id . '-' . now()->format('YmdHi') . '.pdf';
+        $path = public_path('pdfstorage/' . $fileName);
+
+        // 🔹 If already generated, return immediately
+        if (file_exists($path)) {
+            return response()->file($path);
+        }
+
+        // 🔹 Load only what you actually need
+//       $user->load([
+//            'properties' => fn ($q) => $q->limit(10),
+//            'properties.units' => fn ($q) => $q->limit(10),
+//            'properties.documents' => fn ($q) => $q->limit(10),
+//        ]);
+        
+       $user->load([
+    'properties' => function ($q) {
+        $q->limit(10);
+    },
+    'properties.documents' => function ($q) {
+        $q->limit(10);
+    },
+    'properties.notes' => function ($q) {
+        $q->limit(10);
+    },
+
+]);
+
+        // 🔹 Convert all asset URLs to local file paths for wkhtmltopdf
+        $baseUrl = 'file://' . public_path();
+
+        $options = [
+            'enable-local-file-access' => true,
+            'no-stop-slow-scripts' => true,
+            'header-html' => view('pdf.summary-header', compact('baseUrl')),
+            'footer-html' => view('pdf.summary-footer', compact('baseUrl')),
+            'orientation' => 'portrait',
+            'encoding' => 'UTF-8',
+            'margin-top' => 45,
+            'margin-left' => 0,
+            'margin-right' => 0,
+            'margin-bottom' => 40,
+            'header-spacing' => 5,
+            'footer-spacing' => 5,
+            'user-style-sheet' => $baseUrl . '/css/bootstrap.css',
+        ];
+
+        // 🔹 Generate PDF
+        $pdf = \PDF::loadView('pdf.NEWnewSummaryPdf', compact('user', 'baseUrl'));
+        $pdf->setOptions($options);
+        $pdf->save($path);
+
+        return response()->file($path);
+    })->name('downloadSummary');
+});
+
 
 // Gold Member
     Route::group(['middleware' => ['gold']], function () {
@@ -363,8 +432,9 @@ Route::group(['middleware' => ['auth']], function () {
         //roles routes override --------------------------------------------------------------------------------------------------------------------
         Route::group([
             'middleware' => ['level:6'],
-            'as' => 'laravelroles::',
-            'namespace' => '\jeremykenedy\LaravelRoles\App\Http\Controllers',
+            //'as' => 'laravelroles::', --code change to fix duplicate routes conflict - 01/19/2026
+            'as' => 'portal.roles.',
+	    'namespace' => '\jeremykenedy\LaravelRoles\App\Http\Controllers',
         ], function () {
 
             // Dashboards and CRUD Routes
@@ -390,7 +460,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
         //logger routes override --------------------------------------------------------------------------------------------------------------------
-        Route::group(['prefix' => 'activity', 'namespace' => '\jeremykenedy\LaravelLogger\App\Http\Controllers', 'middleware' => ['activity']], function () {
+        /*Route::group(['prefix' => 'activity', 'namespace' => '\jeremykenedy\LaravelLogger\App\Http\Controllers', 'middleware' => ['activity']], function () {
 
             // Dashboards
             Route::get('/', 'LaravelLoggerController@showAccessLog')->name('activity');
@@ -405,9 +475,32 @@ Route::group(['middleware' => ['auth']], function () {
             Route::delete('/destroy-activity', ['uses' => 'LaravelLoggerController@destroyActivityLog'])->name('destroy-activity');
             Route::post('/restore-log', ['uses' => 'LaravelLoggerController@restoreClearedActivityLog'])->name('restore-activity');
         });
+	*/
+	// Logger routes (portal scoped, cache-safe) -- 01/19/2026 - Removed duplication of routes
+	Route::group([
+	    'prefix' => 'portal/activity',
+	    'as' => 'portal.activity.',
+	    'namespace' => '\jeremykenedy\LaravelLogger\App\Http\Controllers',
+	    'middleware' => ['activity'],
+	], function () {
+
+	    // Dashboards
+	    Route::get('/', 'LaravelLoggerController@showAccessLog')->name('index');
+	    Route::get('/cleared', 'LaravelLoggerController@showClearedActivityLog')->name('cleared');
+
+	    // Drill Downs
+	    Route::get('/log/{id}', 'LaravelLoggerController@showAccessLogEntry')->name('log');
+	    Route::get('/cleared/log/{id}', 'LaravelLoggerController@showClearedAccessLogEntry')->name('cleared.log');
+
+	    // Forms
+	    Route::delete('/clear-activity', 'LaravelLoggerController@clearActivityLog')->name('clear');
+	    Route::delete('/destroy-activity', 'LaravelLoggerController@destroyActivityLog')->name('destroy');
+	    Route::post('/restore-log', 'LaravelLoggerController@restoreClearedActivityLog')->name('restore');
+	});
+
 
         // users routes --------------------------------------------------------------------------------------------------------------------
-        Route::group(['namespace' => '\jeremykenedy\laravelusers\app\Http\Controllers'], function () {
+        /*Route::group(['namespace' => '\jeremykenedy\laravelusers\app\Http\Controllers'], function () {
             Route::resource('users', 'UsersManagementController', [
                 'names' => [
                     'index' => 'users',
@@ -418,7 +511,24 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::middleware(['auth'])->group(function () {
             Route::post('search-users', '\jeremykenedy\laravelusers\app\Http\Controllers\UsersManagementController@search')->name('search-users');
-        });
+        });*/
+
+	// Users routes (portal scoped, cache-safe) -- 01/19/2026 - Removed duplication of routes
+	Route::group([
+	    'prefix' => 'portal',
+	    'as' => 'portal.',
+	    'namespace' => '\jeremykenedy\laravelusers\app\Http\Controllers',
+	], function () {
+
+	    Route::resource('users', 'UsersManagementController');
+
+	    Route::post(
+	        'search-users',
+	        'UsersManagementController@search'
+	    )->name('users.search');
+
+	});
+
 
     });
 

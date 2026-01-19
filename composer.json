@@ -53,7 +53,7 @@
     "mews/purifier": "^3.0",
     "plesk/ext-laravel-integration": "*",
     "predis/predis": "^3.0",
-    "renatomarinho/laravel-page-speed": "dev-master",
+    "renatomarinho/laravel-page-speed": "^4.3",
     "spatie/laravel-html": "^3.11.0",
     "spatie/laravel-ignition": "^2.0",
     "spatie/laravel-newsletter": "^5.3",
