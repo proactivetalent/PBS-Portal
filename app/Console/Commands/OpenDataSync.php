@@ -89,42 +89,52 @@ class OpenDataSync extends Command
 //        $users = User::whereIn('id', Property::with('user')->where('sync_at', null)->get()->pluck('user')->flatten()->pluck('id')->unique()->flatten())->get();
 //        $syncstart = now();
 
-        BSAApplicationStatus::dataSync($force);
-        DepCatsPermits::dataSync($force);
-        DobCertOccupancy::dataSync($force);
-        DobComplaints::dataSync($force);
-        DobJobFilings::dataSync($force);
-        DobNowApprovedPermits::dataSync($force);
-        DobNowElectricalPermits::dataSync($force);
-        DobNowElevatorPermits::dataSync($force);
-        DobNowFacadeFilings::dataSync($force);
-        DobNowJobFilings::dataSync($force);
-        DobNowSafetyBoiler::dataSync($force);
-        DobPermits::dataSync($force);
-        DobViolations::dataSync($force);
-        DotSidewalkCorrespondences::dataSync($force);
-        DotSidewalkInspections::dataSync($force);
-        EcbViolations::dataSync($force);
-        FdnyActiveViolOrders::dataSync($force);
-        FdnyCertOfFitness::dataSync($force);
-        FdnyInspections::dataSync($force);
-//        HpdComplaints::dataSync($force); // datasetler silinmiş https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints-and-Problems/ygpa-z7cr/data_preview burada birleşmiş olabilir.
-//        HpdComplaintProblems::dataSync($force); // datasetler silinmiş https://data.cityofnewyork.us/Housing-Development/Housing-Maintenance-Code-Complaints-and-Problems/ygpa-z7cr/data_preview burada birleşmiş olabilir.
-        HpdDwellingRegistrations::dataSync($force);
-        HpdEmergencyRepairs::dataSync($force);
-        HpdEmergencyRepairsCharges::dataSync($force);
-        HpdHousingLitigations::dataSync($force);
-//        HpdJurisdiction::dataSync();
-//        HpdLocalLaw7::dataSync();
-        HpdRepairVacateOrders::dataSync($force);
-        HpdViolations::dataSync($force);
-        LandmarkComplaints::dataSync($force);
-        LandmarkViolations::dataSync($force);
-        OathHearings::dataSync($force);
-        ServiceRequests311::dataSync($force);
-        LandmarkPermits::dataSync($force);
-        HpdRegistrationsContacts::dataSync($force);
-        DobNowElevatorDeviceDetails::dataSync($force);
+        $datasets = [
+            BSAApplicationStatus::class,
+            DepCatsPermits::class,
+            DobCertOccupancy::class,
+            DobComplaints::class,
+            DobJobFilings::class,
+            DobNowApprovedPermits::class,
+            DobNowElectricalPermits::class,
+            DobNowElevatorPermits::class,
+            DobNowFacadeFilings::class,
+            DobNowJobFilings::class,
+            DobNowSafetyBoiler::class,
+            DobPermits::class,
+            DobViolations::class,
+            DotSidewalkCorrespondences::class,
+            DotSidewalkInspections::class,
+            EcbViolations::class,
+            FdnyActiveViolOrders::class,
+            FdnyCertOfFitness::class,
+            FdnyInspections::class,
+            // HpdComplaints / HpdComplaintProblems removed by NYC OpenData
+            HpdDwellingRegistrations::class,
+            HpdEmergencyRepairs::class,
+            HpdEmergencyRepairsCharges::class,
+            HpdHousingLitigations::class,
+            HpdRepairVacateOrders::class,
+            HpdViolations::class,
+            LandmarkComplaints::class,
+            LandmarkViolations::class,
+            OathHearings::class,
+            ServiceRequests311::class,
+            LandmarkPermits::class,
+            HpdRegistrationsContacts::class,
+            DobNowElevatorDeviceDetails::class,
+        ];
+
+        foreach ($datasets as $dataset) {
+            try {
+                $dataset::dataSync($force);
+            } catch (\Throwable $e) {
+                $this->error($dataset . ' failed: ' . $e->getMessage());
+                Log::error($dataset . ' sync failed: ' . $e->getMessage());
+                Log::error($e->getTraceAsString());
+            }
+        }
+
 //        dispatch(new SendSummary($users,$syncstart))->onQueue('oDataSync');
         Log::info('Open Data Sync Bitti : ' . now());
     }

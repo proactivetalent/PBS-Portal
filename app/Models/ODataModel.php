@@ -162,15 +162,27 @@ abstract class ODataModel extends Model
         $results = 0;
         try {
             $results = $ds->getDataset($soql);
-            if ($results != null && sizeof($results) > 0)
-                $this->insertSyncData($results);
+
+            // SODA may return an error string/object instead of row arrays when the query is invalid.
+            if (!is_array($results)) {
+                throw new Exception('Unexpected OpenData response: ' . (is_string($results) ? $results : json_encode($results)));
+            }
+
+            $rows = array_values(array_filter($results, 'is_array'));
+            if (count($rows) > 0) {
+                $this->insertSyncData($rows);
+            } elseif (count($results) > 0 && count($rows) === 0) {
+                throw new Exception('OpenData returned no usable rows: ' . json_encode($results));
+            }
 
             echo $this->getMorphClass() . " SYNCED. \n";
             OpenDataSet::updateOrCreate(['api_id' => $this->datasetId], ['api_id' => $this->datasetId, 'name' => $this->datasetName, 'last_sync' => now()]);
             echo $this->getMorphClass() . " is UPDATED. \n";//$results;
-        } catch (Exception $e) {
+        } catch (\Throwable $e) {
             echo $this->getMorphClass() . " not updated. \n";
+            echo $e->getMessage() . "\n";
             echo $e->getTraceAsString() . "\n";
+            Log::error($e->getMessage());
             Log::error($e->getTraceAsString());
         }
         return;
