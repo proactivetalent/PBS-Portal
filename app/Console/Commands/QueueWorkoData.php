@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB; // needed again when re-enabling sendalerts below
 
 class QueueWorkoData extends Command
 {
@@ -39,9 +39,10 @@ class QueueWorkoData extends Command
      */
     public function handle()
     {
-        $currentprops = ['bins' => DB::table('bin_bbl_unique')->pluck('bin'), 'bbls' => DB::table('bin_bbl_unique')->pluck('bbl')];
         Artisan::call('sync:data');
-        Artisan::queue('mail:sendalerts', ['currentprops' => $currentprops])->onQueue('oDataSync');
-        Artisan::queue('mail:summaryreport')->onQueue('oDataSync');
+        // Alerts paused per Jon (2026-10-14) — do not re-enable until digest/age filter is ready
+        // $currentprops = ['bins' => DB::table('bin_bbl_unique')->pluck('bin'), 'bbls' => DB::table('bin_bbl_unique')->pluck('bbl')];
+        // Artisan::queue('mail:sendalerts', ['currentprops' => $currentprops])->onQueue('oDataSync');
+        // Artisan::queue('mail:summaryreport')->onQueue('oDataSync');
     }
 }
